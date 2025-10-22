@@ -22,7 +22,7 @@ paths:
             #/components/requestBodies/RegisterPartyReferenceDataDirectoryEntryRequest
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/RegisterPartyReferenceDataDirectoryEntryResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':
@@ -49,7 +49,7 @@ paths:
             #/components/requestBodies/UpdatePartyReferenceDataDirectoryEntryRequest
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/UpdatePartyReferenceDataDirectoryEntryResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':
@@ -76,7 +76,7 @@ paths:
             #/components/requestBodies/ControlPartyReferenceDataDirectoryEntryRequest
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/ControlPartyReferenceDataDirectoryEntryResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':
@@ -107,7 +107,7 @@ paths:
             #/components/requestBodies/RequestPartyReferenceDataDirectoryEntryRequest
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/RequestPartyReferenceDataDirectoryEntryResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':
@@ -159,7 +159,7 @@ paths:
             #/components/requestBodies/ExchangePartyReferenceDataDirectoryEntryRequest
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/ExchangePartyReferenceDataDirectoryEntryResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':
@@ -186,7 +186,7 @@ paths:
             #/components/requestBodies/ExecutePartyReferenceDataDirectoryEntryRequest
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/ExecutePartyReferenceDataDirectoryEntryResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':

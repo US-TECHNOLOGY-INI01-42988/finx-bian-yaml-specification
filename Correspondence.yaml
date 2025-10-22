@@ -22,7 +22,7 @@ paths:
             #/components/requestBodies/InitiateCorrespondenceOperatingSessionRequest
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/InitiateCorrespondenceOperatingSessionResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':
@@ -53,7 +53,7 @@ paths:
             #/components/requestBodies/UpdateCorrespondenceOperatingSessionRequest
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/UpdateCorrespondenceOperatingSessionResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':
@@ -80,7 +80,7 @@ paths:
             #/components/requestBodies/ControlCorrespondenceOperatingSessionRequest
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/ControlCorrespondenceOperatingSessionResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':
@@ -107,7 +107,7 @@ paths:
             #/components/requestBodies/ExecuteCorrespondenceOperatingSessionRequest
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/ExecuteCorrespondenceOperatingSessionResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':
@@ -138,7 +138,7 @@ paths:
             #/components/requestBodies/RequestCorrespondenceOperatingSessionRequest
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/RequestCorrespondenceOperatingSessionResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':
