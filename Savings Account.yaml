@@ -22,7 +22,7 @@ paths:
           $ref: '#/components/requestBodies/InitiateSavingsAccountFacilityRequest'
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/InitiateSavingsAccountFacilityResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':
@@ -48,7 +48,7 @@ paths:
           $ref: '#/components/requestBodies/UpdateSavingsAccountFacilityRequest'
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/UpdateSavingsAccountFacilityResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':
@@ -74,7 +74,7 @@ paths:
           $ref: '#/components/requestBodies/ControlSavingsAccountFacilityRequest'
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/ControlSavingsAccountFacilityResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':

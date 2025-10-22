@@ -27,7 +27,7 @@ paths:
           $ref: '#/components/requestBodies/EvaluateCustomerAgreementRequest'
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/EvaluateCustomerAgreementResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':
@@ -53,7 +53,7 @@ paths:
           $ref: '#/components/requestBodies/UpdateCustomerAgreementRequest'
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/UpdateCustomerAgreementResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':
@@ -79,7 +79,7 @@ paths:
           $ref: '#/components/requestBodies/ControlCustomerAgreementRequest'
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/ControlCustomerAgreementResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':
@@ -105,7 +105,7 @@ paths:
           $ref: '#/components/requestBodies/ExchangeCustomerAgreementRequest'
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/ExchangeCustomerAgreementResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':
@@ -131,7 +131,7 @@ paths:
           $ref: '#/components/requestBodies/RequestCustomerAgreementRequest'
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/RequestCustomerAgreementResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':
@@ -161,7 +161,7 @@ paths:
           $ref: '#/components/requestBodies/GrantCustomerAgreementRequest'
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/GrantCustomerAgreementResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':

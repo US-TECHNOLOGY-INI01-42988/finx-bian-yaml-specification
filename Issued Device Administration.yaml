@@ -29,7 +29,7 @@ paths:
           $ref: '#/components/requestBodies/InitiateIssuedDeviceAllocationRequest'
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/InitiateIssuedDeviceAllocationResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':
@@ -55,7 +55,7 @@ paths:
           $ref: '#/components/requestBodies/UpdateIssuedDeviceAllocationRequest'
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/UpdateIssuedDeviceAllocationResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':
@@ -81,7 +81,7 @@ paths:
           $ref: '#/components/requestBodies/ControlIssuedDeviceAllocationRequest'
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/ControlIssuedDeviceAllocationResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':
@@ -107,7 +107,7 @@ paths:
           $ref: '#/components/requestBodies/ExchangeIssuedDeviceAllocationRequest'
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/ExchangeIssuedDeviceAllocationResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':
