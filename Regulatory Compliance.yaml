@@ -23,7 +23,7 @@ paths:
             #/components/requestBodies/EvaluateRegulatoryComplianceAssessmentRequest
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/EvaluateRegulatoryComplianceAssessmentResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':
@@ -50,7 +50,7 @@ paths:
             #/components/requestBodies/RequestRegulatoryComplianceAssessmentRequest
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/RequestRegulatoryComplianceAssessmentResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':
@@ -102,7 +102,7 @@ paths:
             #/components/requestBodies/UpdateRegulatoryComplianceAssessmentRequest
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/UpdateRegulatoryComplianceAssessmentResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':
@@ -129,7 +129,7 @@ paths:
             #/components/requestBodies/CaptureRegulatoryComplianceAssessmentRequest
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/CaptureRegulatoryComplianceAssessmentResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':
