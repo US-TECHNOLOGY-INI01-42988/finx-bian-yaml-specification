@@ -27,7 +27,7 @@ paths:
             #/components/requestBodies/InitiatePartyRelationshipAdministrativePlanRequest
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/InitiatePartyRelationshipAdministrativePlanResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':
@@ -54,7 +54,7 @@ paths:
             #/components/requestBodies/UpdatePartyRelationshipAdministrativePlanRequest
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/UpdatePartyRelationshipAdministrativePlanResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':
@@ -85,7 +85,7 @@ paths:
             #/components/requestBodies/ControlPartyRelationshipAdministrativePlanRequest
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/ControlPartyRelationshipAdministrativePlanResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':
@@ -116,7 +116,7 @@ paths:
             #/components/requestBodies/ExchangePartyRelationshipAdministrativePlanRequest
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/ExchangePartyRelationshipAdministrativePlanResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':
@@ -143,7 +143,7 @@ paths:
             #/components/requestBodies/ExecutePartyRelationshipAdministrativePlanRequest
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/ExecutePartyRelationshipAdministrativePlanResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':
@@ -170,7 +170,7 @@ paths:
             #/components/requestBodies/RequestPartyRelationshipAdministrativePlanRequest
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/RequestPartyRelationshipAdministrativePlanResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':
