@@ -10,7 +10,7 @@ info:
 servers:
   - url: ' https://virtserver.swaggerhub.com/BIAN-3/Correspondence/12.0.1'
 paths:
-  '/Correspondence/Initiate':
+  '/correspondence/initiate':
       post:
         tags:
           - CR (DDD Aggregate) - CorrespondenceOperatingSession
@@ -35,7 +35,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/Correspondence/{correspondenceid}/Update':
+  '/correspondence/{correspondence-id}/update':
       put:
         tags:
           - CR (DDD Aggregate) - CorrespondenceOperatingSession
@@ -47,7 +47,7 @@ paths:
           change priorities)
         operationId: CorrespondenceOperatingSession/Update
         parameters:
-          - $ref: '#/components/parameters/correspondenceid'
+          - $ref: '#/components/parameters/correspondence-id'
         requestBody:
           $ref: >-
             #/components/requestBodies/UpdateCorrespondenceOperatingSessionRequest
@@ -66,7 +66,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/Correspondence/{correspondenceid}/Control':
+  '/correspondence/{correspondence-id}/control':
       put:
         tags:
           - CR (DDD Aggregate) - CorrespondenceOperatingSession
@@ -74,7 +74,7 @@ paths:
         description: (DDD  Service) CoCR Control the session (e.g. suspend incoming mail)
         operationId: CorrespondenceOperatingSession/Control
         parameters:
-          - $ref: '#/components/parameters/correspondenceid'
+          - $ref: '#/components/parameters/correspondence-id'
         requestBody:
           $ref: >-
             #/components/requestBodies/ControlCorrespondenceOperatingSessionRequest
@@ -93,7 +93,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/Correspondence/{correspondenceid}/Execute':
+  '/correspondence/{correspondence-id}/execute':
       put:
         tags:
           - CR (DDD Aggregate) - CorrespondenceOperatingSession
@@ -101,7 +101,7 @@ paths:
         description: (DDD  Service) ExCR Execute an automated task (e.g. statistical analysis)
         operationId: CorrespondenceOperatingSession/Execute
         parameters:
-          - $ref: '#/components/parameters/correspondenceid'
+          - $ref: '#/components/parameters/correspondence-id'
         requestBody:
           $ref: >-
             #/components/requestBodies/ExecuteCorrespondenceOperatingSessionRequest
@@ -120,7 +120,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/Correspondence/{correspondenceid}/Request':
+  '/correspondence/{correspondence-id}/request':
       put:
         tags:
           - CR (DDD Aggregate) - CorrespondenceOperatingSession
@@ -132,7 +132,7 @@ paths:
           addressed correspondence)
         operationId: CorrespondenceOperatingSession/Request
         parameters:
-          - $ref: '#/components/parameters/correspondenceid'
+          - $ref: '#/components/parameters/correspondence-id'
         requestBody:
           $ref: >-
             #/components/requestBodies/RequestCorrespondenceOperatingSessionRequest
@@ -151,7 +151,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/Correspondence/{correspondenceid}/Retrieve':
+  '/correspondence/{correspondence-id}/retrieve':
       get:
         tags:
           - CR (DDD Aggregate) - CorrespondenceOperatingSession
@@ -159,7 +159,7 @@ paths:
         description: (DDD  Service) ReCR Retrieve details about the correspondence session
         operationId: CorrespondenceOperatingSession/Retrieve
         parameters:
-          - $ref: '#/components/parameters/correspondenceid'
+          - $ref: '#/components/parameters/correspondence-id'
         responses:
           '200':
             $ref: >-
@@ -176,7 +176,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/Correspondence/{correspondenceid}/Outbound/Initiate':
+  '/correspondence/{correspondence-id}/outbound/initiate':
       post:
         tags:
           - BQ (DDD Aggregate) - Outbound
@@ -184,7 +184,7 @@ paths:
         description: (DDD  Service) InBQ Initiate processing an outbound correspondence item
         operationId: Outbound/Initiate
         parameters:
-          - $ref: '#/components/parameters/correspondenceid'
+          - $ref: '#/components/parameters/correspondence-id'
         requestBody:
           $ref: '#/components/requestBodies/InitiateOutboundRequest'
         responses:
@@ -202,7 +202,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/Correspondence/{correspondenceid}/Outbound/{outboundid}/Update':
+  '/correspondence/{correspondence-id}/outbound/{outbound-id}/update':
       put:
         tags:
           - BQ (DDD Aggregate) - Outbound
@@ -210,8 +210,8 @@ paths:
         description: (DDD  Service) UpBQ Update details of an outbound correspondence item
         operationId: Outbound/Update
         parameters:
-          - $ref: '#/components/parameters/correspondenceid'
-          - $ref: '#/components/parameters/outboundid'
+          - $ref: '#/components/parameters/correspondence-id'
+          - $ref: '#/components/parameters/outbound-id'
         requestBody:
           $ref: '#/components/requestBodies/UpdateOutboundRequest'
         responses:
@@ -229,7 +229,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/Correspondence/{correspondenceid}/Outbound/{outboundid}/Retrieve':
+  '/correspondence/{correspondence-id}/outbound/{outbound-id}/retrieve':
       get:
         tags:
           - BQ (DDD Aggregate) - Outbound
@@ -237,8 +237,8 @@ paths:
         description: (DDD  Service) ReBQ Retrieve details about an outbound correspondence item
         operationId: Outbound/Retrieve
         parameters:
-          - $ref: '#/components/parameters/correspondenceid'
-          - $ref: '#/components/parameters/outboundid'
+          - $ref: '#/components/parameters/correspondence-id'
+          - $ref: '#/components/parameters/outbound-id'
         responses:
           '200':
             $ref: '#/components/responses/RetrieveOutboundResponse'
@@ -254,7 +254,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/Correspondence/{correspondenceid}/OutboundWithResponse/Initiate':
+  '/correspondence/{correspondence-id}/outbound-with-response/initiate':
       post:
         tags:
           - BQ (DDD Aggregate) - OutboundWithResponse
@@ -266,7 +266,7 @@ paths:
           response
         operationId: OutboundWithResponse/Initiate
         parameters:
-          - $ref: '#/components/parameters/correspondenceid'
+          - $ref: '#/components/parameters/correspondence-id'
         requestBody:
           $ref: '#/components/requestBodies/InitiateOutboundWithResponseRequest'
         responses:
@@ -284,7 +284,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/Correspondence/{correspondenceid}/OutboundWithResponse/{outboundwithresponseid}/Update':
+  '/correspondence/{correspondence-id}/outbound-with-response/{outbound-with-response-id}/update':
       put:
         tags:
           - BQ (DDD Aggregate) - OutboundWithResponse
@@ -296,8 +296,8 @@ paths:
           response
         operationId: OutboundWithResponse/Update
         parameters:
-          - $ref: '#/components/parameters/correspondenceid'
-          - $ref: '#/components/parameters/outboundwithresponseid'
+          - $ref: '#/components/parameters/correspondence-id'
+          - $ref: '#/components/parameters/outbound-with-response-id'
         requestBody:
           $ref: '#/components/requestBodies/UpdateOutboundWithResponseRequest'
         responses:
@@ -315,7 +315,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/Correspondence/{correspondenceid}/OutboundWithResponse/{outboundwithresponseid}/Retrieve':
+  '/correspondence/{correspondence-id}/outbound-with-response/{outbound-with-response-id}/retrieve':
       get:
         tags:
           - BQ (DDD Aggregate) - OutboundWithResponse
@@ -327,8 +327,8 @@ paths:
           tracked response
         operationId: OutboundWithResponse/Retrieve
         parameters:
-          - $ref: '#/components/parameters/correspondenceid'
-          - $ref: '#/components/parameters/outboundwithresponseid'
+          - $ref: '#/components/parameters/correspondence-id'
+          - $ref: '#/components/parameters/outbound-with-response-id'
         responses:
           '200':
             $ref: '#/components/responses/RetrieveOutboundWithResponseResponse'
@@ -344,7 +344,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/Correspondence/{correspondenceid}/Inbound/Initiate':
+  '/correspondence/{correspondence-id}/inbound/initiate':
       post:
         tags:
           - BQ (DDD Aggregate) - Inbound
@@ -352,7 +352,7 @@ paths:
         description: (DDD  Service) InBQ Initiate processing of an inbound correspondence item
         operationId: Inbound/Initiate
         parameters:
-          - $ref: '#/components/parameters/correspondenceid'
+          - $ref: '#/components/parameters/correspondence-id'
         requestBody:
           $ref: '#/components/requestBodies/InitiateInboundRequest'
         responses:
@@ -370,7 +370,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/Correspondence/{correspondenceid}/Inbound/{inboundid}/Update':
+  '/correspondence/{correspondence-id}/inbound/{inbound-id}/update':
       put:
         tags:
           - BQ (DDD Aggregate) - Inbound
@@ -378,8 +378,8 @@ paths:
         description: (DDD  Service) UpBQ Update details of an inbound correspondence item
         operationId: Inbound/Update
         parameters:
-          - $ref: '#/components/parameters/correspondenceid'
-          - $ref: '#/components/parameters/inboundid'
+          - $ref: '#/components/parameters/correspondence-id'
+          - $ref: '#/components/parameters/inbound-id'
         requestBody:
           $ref: '#/components/requestBodies/UpdateInboundRequest'
         responses:
@@ -397,7 +397,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/Correspondence/{correspondenceid}/Inbound/{inboundid}/Retrieve':
+  '/correspondence/{correspondence-id}/inbound/{inbound-id}/retrieve':
       get:
         tags:
           - BQ (DDD Aggregate) - Inbound
@@ -405,8 +405,8 @@ paths:
         description: (DDD  Service) ReBQ Retrieve details about an inbound correspondence item
         operationId: Inbound/Retrieve
         parameters:
-          - $ref: '#/components/parameters/correspondenceid'
-          - $ref: '#/components/parameters/inboundid'
+          - $ref: '#/components/parameters/correspondence-id'
+          - $ref: '#/components/parameters/inbound-id'
         responses:
           '200':
             $ref: '#/components/responses/RetrieveInboundResponse'
@@ -422,7 +422,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/Correspondence/{correspondenceid}/BlockMailing/Initiate':
+  '/correspondence/{correspondence-id}/block-mailing/initiate':
       post:
         tags:
           - BQ (DDD Aggregate) - BlockMailing
@@ -430,7 +430,7 @@ paths:
         description: (DDD  Service) InBQ Initiate processing an outbound correspondence block
         operationId: BlockMailing/Initiate
         parameters:
-          - $ref: '#/components/parameters/correspondenceid'
+          - $ref: '#/components/parameters/correspondence-id'
         requestBody:
           $ref: '#/components/requestBodies/InitiateBlockMailingRequest'
         responses:
@@ -448,7 +448,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/Correspondence/{correspondenceid}/BlockMailing/{blockmailingid}/Update':
+  '/correspondence/{correspondence-id}/block-mailing/{block-mailing-id}/update':
       put:
         tags:
           - BQ (DDD Aggregate) - BlockMailing
@@ -456,8 +456,8 @@ paths:
         description: (DDD  Service) UpBQ Update details of an outbound correspondence block
         operationId: BlockMailing/Update
         parameters:
-          - $ref: '#/components/parameters/correspondenceid'
-          - $ref: '#/components/parameters/blockmailingid'
+          - $ref: '#/components/parameters/correspondence-id'
+          - $ref: '#/components/parameters/block-mailing-id'
         requestBody:
           $ref: '#/components/requestBodies/UpdateBlockMailingRequest'
         responses:
@@ -475,7 +475,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/Correspondence/{correspondenceid}/BlockMailing/{blockmailingid}/Retrieve':
+  '/correspondence/{correspondence-id}/block-mailing/{block-mailing-id}/retrieve':
       get:
         tags:
           - BQ (DDD Aggregate) - BlockMailing
@@ -483,8 +483,8 @@ paths:
         description: (DDD  Service) ReBQ Retrieve details about an outbound correspondence block
         operationId: BlockMailing/Retrieve
         parameters:
-          - $ref: '#/components/parameters/correspondenceid'
-          - $ref: '#/components/parameters/blockmailingid'
+          - $ref: '#/components/parameters/correspondence-id'
+          - $ref: '#/components/parameters/block-mailing-id'
         responses:
           '200':
             $ref: '#/components/responses/RetrieveBlockMailingResponse'
@@ -3050,36 +3050,36 @@ components:
             schema:
               $ref: '#/components/schemas/HTTPError'
   parameters:
-    correspondenceid:
-        name: correspondenceid
+    correspondence-id:
+        name: correspondence-id
         in: path
         required: true
         style: simple
         schema:
           type: string
-    outboundid:
-        name: outboundid
+    outbound-id:
+        name: outbound-id
         in: path
         required: true
         style: simple
         schema:
           type: string
-    outboundwithresponseid:
-        name: outboundwithresponseid
+    outbound-with-response-id:
+        name: outbound-with-response-id
         in: path
         required: true
         style: simple
         schema:
           type: string
-    inboundid:
-        name: inboundid
+    inbound-id:
+        name: inbound-id
         in: path
         required: true
         style: simple
         schema:
           type: string
-    blockmailingid:
-        name: blockmailingid
+    block-mailing-id:
+        name: block-mailing-id
         in: path
         required: true
         style: simple
