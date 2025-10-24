@@ -12,7 +12,7 @@ info:
 servers:
   - url: ' https://virtserver.swaggerhub.com/BIAN-3/CustomerAgreement/12.0.1'
 paths:
-  '/CustomerAgreement/Evaluate':
+  '/customer-agreement/evaluate':
       post:
         tags:
           - CR (DDD Aggregate) - CustomerAgreement
@@ -40,7 +40,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/CustomerAgreement/{customeragreementid}/Update':
+  '/customer-agreement/{customer-agreement-id}/update':
       put:
         tags:
           - CR (DDD Aggregate) - CustomerAgreement
@@ -48,7 +48,7 @@ paths:
         description: (DDD  Service) UpCR Update details of an active customer master agreement
         operationId: CustomerAgreement/Update
         parameters:
-          - $ref: '#/components/parameters/customeragreementid'
+          - $ref: '#/components/parameters/customer-agreement-id'
         requestBody:
           $ref: '#/components/requestBodies/UpdateCustomerAgreementRequest'
         responses:
@@ -66,7 +66,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/CustomerAgreement/{customeragreementid}/Control':
+  '/customer-agreement/{customer-agreement-id}/control':
       put:
         tags:
           - CR (DDD Aggregate) - CustomerAgreement
@@ -74,7 +74,7 @@ paths:
         description: (DDD  Service) CoCR Control the processing of an agreement
         operationId: CustomerAgreement/Control
         parameters:
-          - $ref: '#/components/parameters/customeragreementid'
+          - $ref: '#/components/parameters/customer-agreement-id'
         requestBody:
           $ref: '#/components/requestBodies/ControlCustomerAgreementRequest'
         responses:
@@ -92,7 +92,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/CustomerAgreement/{customeragreementid}/Exchange':
+  '/customer-agreement/{customer-agreement-id}/exchange':
       put:
         tags:
           - CR (DDD Aggregate) - CustomerAgreement
@@ -100,7 +100,7 @@ paths:
         description: (DDD  Service) EcCR Accept, reject etc an agreement
         operationId: CustomerAgreement/Exchange
         parameters:
-          - $ref: '#/components/parameters/customeragreementid'
+          - $ref: '#/components/parameters/customer-agreement-id'
         requestBody:
           $ref: '#/components/requestBodies/ExchangeCustomerAgreementRequest'
         responses:
@@ -118,7 +118,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/CustomerAgreement/{customeragreementid}/Request':
+  '/customer-agreement/{customer-agreement-id}/request':
       put:
         tags:
           - CR (DDD Aggregate) - CustomerAgreement
@@ -126,7 +126,7 @@ paths:
         description: (DDD  Service) RqCR Request check of a proposed activity is compatible
         operationId: CustomerAgreement/Request
         parameters:
-          - $ref: '#/components/parameters/customeragreementid'
+          - $ref: '#/components/parameters/customer-agreement-id'
         requestBody:
           $ref: '#/components/requestBodies/RequestCustomerAgreementRequest'
         responses:
@@ -144,7 +144,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/CustomerAgreement/{customeragreementid}/Grant':
+  '/customer-agreement/{customer-agreement-id}/grant':
       put:
         tags:
           - CR (DDD Aggregate) - CustomerAgreement
@@ -156,7 +156,7 @@ paths:
           agreement
         operationId: CustomerAgreement/Grant
         parameters:
-          - $ref: '#/components/parameters/customeragreementid'
+          - $ref: '#/components/parameters/customer-agreement-id'
         requestBody:
           $ref: '#/components/requestBodies/GrantCustomerAgreementRequest'
         responses:
@@ -174,7 +174,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/CustomerAgreement/{customeragreementid}/Retrieve':
+  '/customer-agreement/{customer-agreement-id}/retrieve':
       get:
         tags:
           - CR (DDD Aggregate) - CustomerAgreement
@@ -182,7 +182,7 @@ paths:
         description: (DDD  Service) ReCR Retrieve details about a customer master agreement
         operationId: CustomerAgreement/Retrieve
         parameters:
-          - $ref: '#/components/parameters/customeragreementid'
+          - $ref: '#/components/parameters/customer-agreement-id'
         responses:
           '200':
             $ref: '#/components/responses/RetrieveCustomerAgreementResponse'
@@ -198,7 +198,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/CustomerAgreement/{customeragreementid}/LegalTerms/Evaluate':
+  '/customer-agreement/{customer-agreement-id}/legal-terms/evaluate':
       post:
         tags:
           - BQ (DDD Aggregate) - LegalTerms
@@ -206,7 +206,7 @@ paths:
         description: (DDD  Service) EvBQ Establish the legal terms for a customer master agreement
         operationId: LegalTerms/Evaluate
         parameters:
-          - $ref: '#/components/parameters/customeragreementid'
+          - $ref: '#/components/parameters/customer-agreement-id'
         requestBody:
           $ref: '#/components/requestBodies/EvaluateLegalTermsRequest'
         responses:
@@ -224,7 +224,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/CustomerAgreement/{customeragreementid}/LegalTerms/{legaltermsid}/Update':
+  '/customer-agreement/{customer-agreement-id}/legal-terms/{legal-terms-id}/update':
       put:
         tags:
           - BQ (DDD Aggregate) - LegalTerms
@@ -232,8 +232,8 @@ paths:
         description: (DDD  Service) UpBQ Update the legal terms for a customer master agreement
         operationId: LegalTerms/Update
         parameters:
-          - $ref: '#/components/parameters/customeragreementid'
-          - $ref: '#/components/parameters/legaltermsid'
+          - $ref: '#/components/parameters/customer-agreement-id'
+          - $ref: '#/components/parameters/legal-terms-id'
         requestBody:
           $ref: '#/components/requestBodies/UpdateLegalTermsRequest'
         responses:
@@ -251,7 +251,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/CustomerAgreement/{customeragreementid}/LegalTerms/{legaltermsid}/Retrieve':
+  '/customer-agreement/{customer-agreement-id}/legal-terms/{legal-terms-id}/retrieve':
       get:
         tags:
           - BQ (DDD Aggregate) - LegalTerms
@@ -259,8 +259,8 @@ paths:
         description: (DDD  Service) ReBQ Retrieve details about the legal terms of an agreement
         operationId: LegalTerms/Retrieve
         parameters:
-          - $ref: '#/components/parameters/customeragreementid'
-          - $ref: '#/components/parameters/legaltermsid'
+          - $ref: '#/components/parameters/customer-agreement-id'
+          - $ref: '#/components/parameters/legal-terms-id'
         responses:
           '200':
             $ref: '#/components/responses/RetrieveLegalTermsResponse'
@@ -276,7 +276,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/CustomerAgreement/{customeragreementid}/RegulatoryTerms/Evaluate':
+  '/customer-agreement/{customer-agreement-id}/regulatory-terms/evaluate':
       post:
         tags:
           - BQ (DDD Aggregate) - RegulatoryTerms
@@ -288,7 +288,7 @@ paths:
           agreement
         operationId: RegulatoryTerms/Evaluate
         parameters:
-          - $ref: '#/components/parameters/customeragreementid'
+          - $ref: '#/components/parameters/customer-agreement-id'
         requestBody:
           $ref: '#/components/requestBodies/EvaluateRegulatoryTermsRequest'
         responses:
@@ -306,7 +306,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/CustomerAgreement/{customeragreementid}/RegulatoryTerms/{regulatorytermsid}/Update':
+  '/customer-agreement/{customer-agreement-id}/regulatory-terms/{regulatory-terms-id}/update':
       put:
         tags:
           - BQ (DDD Aggregate) - RegulatoryTerms
@@ -314,8 +314,8 @@ paths:
         description: (DDD  Service) UpBQ Update the regulatory terms for a customer master agreement
         operationId: RegulatoryTerms/Update
         parameters:
-          - $ref: '#/components/parameters/customeragreementid'
-          - $ref: '#/components/parameters/regulatorytermsid'
+          - $ref: '#/components/parameters/customer-agreement-id'
+          - $ref: '#/components/parameters/regulatory-terms-id'
         requestBody:
           $ref: '#/components/requestBodies/UpdateRegulatoryTermsRequest'
         responses:
@@ -333,7 +333,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/CustomerAgreement/{customeragreementid}/RegulatoryTerms/{regulatorytermsid}/Retrieve':
+  '/customer-agreement/{customer-agreement-id}/regulatory-terms/{regulatory-terms-id}/retrieve':
       get:
         tags:
           - BQ (DDD Aggregate) - RegulatoryTerms
@@ -341,8 +341,8 @@ paths:
         description: (DDD  Service) ReBQ Retrieve details about the regulatory terms of an agreement
         operationId: RegulatoryTerms/Retrieve
         parameters:
-          - $ref: '#/components/parameters/customeragreementid'
-          - $ref: '#/components/parameters/regulatorytermsid'
+          - $ref: '#/components/parameters/customer-agreement-id'
+          - $ref: '#/components/parameters/regulatory-terms-id'
         responses:
           '200':
             $ref: '#/components/responses/RetrieveRegulatoryTermsResponse'
@@ -358,7 +358,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/CustomerAgreement/{customeragreementid}/PolicyTerms/Evaluate':
+  '/customer-agreement/{customer-agreement-id}/policy-terms/evaluate':
       post:
         tags:
           - BQ (DDD Aggregate) - PolicyTerms
@@ -370,7 +370,7 @@ paths:
           agreement
         operationId: PolicyTerms/Evaluate
         parameters:
-          - $ref: '#/components/parameters/customeragreementid'
+          - $ref: '#/components/parameters/customer-agreement-id'
         requestBody:
           $ref: '#/components/requestBodies/EvaluatePolicyTermsRequest'
         responses:
@@ -388,7 +388,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/CustomerAgreement/{customeragreementid}/PolicyTerms/{policytermsid}/Update':
+  '/customer-agreement/{customer-agreement-id}/policy-terms/{policy-terms-id}/update':
       put:
         tags:
           - BQ (DDD Aggregate) - PolicyTerms
@@ -400,8 +400,8 @@ paths:
           agreement
         operationId: PolicyTerms/Update
         parameters:
-          - $ref: '#/components/parameters/customeragreementid'
-          - $ref: '#/components/parameters/policytermsid'
+          - $ref: '#/components/parameters/customer-agreement-id'
+          - $ref: '#/components/parameters/policy-terms-id'
         requestBody:
           $ref: '#/components/requestBodies/UpdatePolicyTermsRequest'
         responses:
@@ -419,7 +419,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/CustomerAgreement/{customeragreementid}/PolicyTerms/{policytermsid}/Retrieve':
+  '/customer-agreement/{customer-agreement-id}/policy-terms/{policy-terms-id}/retrieve':
       get:
         tags:
           - BQ (DDD Aggregate) - PolicyTerms
@@ -431,8 +431,8 @@ paths:
           agreement
         operationId: PolicyTerms/Retrieve
         parameters:
-          - $ref: '#/components/parameters/customeragreementid'
-          - $ref: '#/components/parameters/policytermsid'
+          - $ref: '#/components/parameters/customer-agreement-id'
+          - $ref: '#/components/parameters/policy-terms-id'
         responses:
           '200':
             $ref: '#/components/responses/RetrievePolicyTermsResponse'
@@ -2986,29 +2986,29 @@ components:
             schema:
               $ref: '#/components/schemas/HTTPError'
   parameters:
-    customeragreementid:
-        name: customeragreementid
+    customer-agreement-id:
+        name: customer-agreement-id
         in: path
         required: true
         style: simple
         schema:
           type: string
-    legaltermsid:
-        name: legaltermsid
+    legal-terms-id:
+        name: legal-terms-id
         in: path
         required: true
         style: simple
         schema:
           type: string
-    regulatorytermsid:
-        name: regulatorytermsid
+    regulatory-terms-id:
+        name: regulatory-terms-id
         in: path
         required: true
         style: simple
         schema:
           type: string
-    policytermsid:
-        name: policytermsid
+    policy-terms-id:
+        name: policy-terms-id
         in: path
         required: true
         style: simple
