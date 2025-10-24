@@ -23,7 +23,7 @@ paths:
           $ref: '#/components/requestBodies/ExchangeDocumentDirectoryEntryRequest'
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/ExchangeDocumentDirectoryEntryResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':
@@ -49,7 +49,7 @@ paths:
           $ref: '#/components/requestBodies/RequestDocumentDirectoryEntryRequest'
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/RequestDocumentDirectoryEntryResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':
@@ -75,7 +75,7 @@ paths:
           $ref: '#/components/requestBodies/ControlDocumentDirectoryEntryRequest'
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/ControlDocumentDirectoryEntryResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':
@@ -101,7 +101,7 @@ paths:
           $ref: '#/components/requestBodies/ExecuteDocumentDirectoryEntryRequest'
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/ExecuteDocumentDirectoryEntryResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':
@@ -149,7 +149,7 @@ paths:
           $ref: '#/components/requestBodies/RegisterDocumentDirectoryEntryRequest'
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/RegisterDocumentDirectoryEntryResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':
@@ -199,7 +199,7 @@ paths:
           $ref: '#/components/requestBodies/UpdateDocumentDirectoryEntryRequest'
         responses:
           '200':
-            $ref: '#/components/responses/BadRequest'
+            $ref: '#/components/responses/UpdateDocumentDirectoryEntryResponse'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':
