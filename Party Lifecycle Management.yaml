@@ -15,7 +15,7 @@ info:
 servers:
   - url: ' https://virtserver.swaggerhub.com/BIAN-3/PartyLifecycleManagement/12.0.1'
 paths:
-  '/PartyLifecycleManagement/Initiate':
+  '/party-lifecycle-management/initiate':
       post:
         tags:
           - CR (DDD Aggregate) - PartyRelationshipAdministrativePlan
@@ -37,10 +37,10 @@ paths:
           '404':
             $ref: '#/components/responses/NotFound'
           '429':
-            $ref: '#/components/responses/TooManyRequests'
+            $ref: '#/components/responses/TooManyRequests'          
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/PartyLifecycleManagement/{partylifecyclemanagementid}/Update':
+  '/party-lifecycle-management/{party-lifecycle-management-id}/update':
       put:
         tags:
           - CR (DDD Aggregate) - PartyRelationshipAdministrativePlan
@@ -48,7 +48,7 @@ paths:
         description: (DDD  Service) UpCR Update details about a party life-cycle administrative plan
         operationId: PartyRelationshipAdministrativePlan/Update
         parameters:
-          - $ref: '#/components/parameters/partylifecyclemanagementid'
+          - $ref: '#/components/parameters/party-lifecycle-management-id'
         requestBody:
           $ref: >-
             #/components/requestBodies/UpdatePartyRelationshipAdministrativePlanRequest
@@ -67,7 +67,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/PartyLifecycleManagement/{partylifecyclemanagementid}/Control':
+  '/party-lifecycle-management/{party-lifecycle-management-id}/control':
       put:
         tags:
           - CR (DDD Aggregate) - PartyRelationshipAdministrativePlan
@@ -79,7 +79,7 @@ paths:
           plan (e.g. terminate)
         operationId: PartyRelationshipAdministrativePlan/Control
         parameters:
-          - $ref: '#/components/parameters/partylifecyclemanagementid'
+          - $ref: '#/components/parameters/party-lifecycle-management-id'
         requestBody:
           $ref: >-
             #/components/requestBodies/ControlPartyRelationshipAdministrativePlanRequest
@@ -98,7 +98,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/PartyLifecycleManagement/{partylifecyclemanagementid}/Exchange':
+  '/party-lifecycle-management/{party-lifecycle-management-id}/exchange':
       put:
         tags:
           - CR (DDD Aggregate) - PartyRelationshipAdministrativePlan
@@ -110,7 +110,7 @@ paths:
           plan
         operationId: PartyRelationshipAdministrativePlan/Exchange
         parameters:
-          - $ref: '#/components/parameters/partylifecyclemanagementid'
+          - $ref: '#/components/parameters/party-lifecycle-management-id'
         requestBody:
           $ref: >-
             #/components/requestBodies/ExchangePartyRelationshipAdministrativePlanRequest
@@ -126,10 +126,10 @@ paths:
           '404':
             $ref: '#/components/responses/NotFound'
           '429':
-            $ref: '#/components/responses/TooManyRequests'
+            $ref: '#/components/responses/TooManyRequests'          
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/PartyLifecycleManagement/{partylifecyclemanagementid}/Execute':
+  '/party-lifecycle-management/{party-lifecycle-management-id}/execute':
       put:
         tags:
           - CR (DDD Aggregate) - PartyRelationshipAdministrativePlan
@@ -137,7 +137,7 @@ paths:
         description: (DDD  Service) ExCR Execute an automated action (e.g. input data)
         operationId: PartyRelationshipAdministrativePlan/Execute
         parameters:
-          - $ref: '#/components/parameters/partylifecyclemanagementid'
+          - $ref: '#/components/parameters/party-lifecycle-management-id'
         requestBody:
           $ref: >-
             #/components/requestBodies/ExecutePartyRelationshipAdministrativePlanRequest
@@ -153,10 +153,10 @@ paths:
           '404':
             $ref: '#/components/responses/NotFound'
           '429':
-            $ref: '#/components/responses/TooManyRequests'
+            $ref: '#/components/responses/TooManyRequests'          
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/PartyLifecycleManagement/{partylifecyclemanagementid}/Request':
+  '/party-lifecycle-management/{party-lifecycle-management-id}/request':
       put:
         tags:
           - CR (DDD Aggregate) - PartyRelationshipAdministrativePlan
@@ -164,7 +164,7 @@ paths:
         description: (DDD  Service) RqCR Request manual intervention (e.g. negotiate resolution)
         operationId: PartyRelationshipAdministrativePlan/Request
         parameters:
-          - $ref: '#/components/parameters/partylifecyclemanagementid'
+          - $ref: '#/components/parameters/party-lifecycle-management-id'
         requestBody:
           $ref: >-
             #/components/requestBodies/RequestPartyRelationshipAdministrativePlanRequest
@@ -183,7 +183,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/PartyLifecycleManagement/{partylifecyclemanagementid}/Retrieve':
+  '/party-lifecycle-management/{party-lifecycle-management-id}/retrieve':
       get:
         tags:
           - CR (DDD Aggregate) - PartyRelationshipAdministrativePlan
@@ -191,7 +191,7 @@ paths:
         description: (DDD  Service) ReCR Retrieve details about a party life-cycle administrative plan
         operationId: PartyRelationshipAdministrativePlan/Retrieve
         parameters:
-          - $ref: '#/components/parameters/partylifecyclemanagementid'
+          - $ref: '#/components/parameters/party-lifecycle-management-id'
         responses:
           '200':
             $ref: >-
@@ -208,7 +208,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/PartyLifecycleManagement/{partylifecyclemanagementid}/Qualification/{qualificationid}/Retrieve':
+  '/party-lifecycle-management/{party-lifecycle-management-id}/qualification/{qualification-id}/retrieve':
       get:
         tags:
           - BQ (DDD Aggregate) - Qualification
@@ -216,8 +216,8 @@ paths:
         description: (DDD  Service) ReBQ Retrieve details about a party qualification routine
         operationId: Qualification/Retrieve
         parameters:
-          - $ref: '#/components/parameters/partylifecyclemanagementid'
-          - $ref: '#/components/parameters/qualificationid'
+          - $ref: '#/components/parameters/party-lifecycle-management-id'
+          - $ref: '#/components/parameters/qualification-id'
         responses:
           '200':
             $ref: '#/components/responses/RetrieveQualificationResponse'
@@ -233,7 +233,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/PartyLifecycleManagement/{partylifecyclemanagementid}/Documentation/{documentationid}/Update':
+  '/party-lifecycle-management/{party-lifecycle-management-id}/documentation/{documentation-id}/update':
       put:
         tags:
           - BQ (DDD Aggregate) - Documentation
@@ -241,8 +241,8 @@ paths:
         description: (DDD  Service) UpBQ Update details about document handling
         operationId: Documentation/Update
         parameters:
-          - $ref: '#/components/parameters/partylifecyclemanagementid'
-          - $ref: '#/components/parameters/documentationid'
+          - $ref: '#/components/parameters/party-lifecycle-management-id'
+          - $ref: '#/components/parameters/documentation-id'
         requestBody:
           $ref: '#/components/requestBodies/UpdateDocumentationRequest'
         responses:
@@ -260,7 +260,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/PartyLifecycleManagement/{partylifecyclemanagementid}/Documentation/{documentationid}/Execute':
+  '/party-lifecycle-management/{party-lifecycle-management-id}/documentation/{documentation-id}/execute':
       put:
         tags:
           - BQ (DDD Aggregate) - Documentation
@@ -270,10 +270,10 @@ paths:
         description: >-
           (DDD  Service) ExBQ Execute an automated action (e.g. input data about a
           document)
-        operationId: Documentation/Execute
+        operationId: Documentation/Execute        
         parameters:
-          - $ref: '#/components/parameters/partylifecyclemanagementid'
-          - $ref: '#/components/parameters/documentationid'
+          - $ref: '#/components/parameters/party-lifecycle-management-id'
+          - $ref: '#/components/parameters/documentation-id'
         requestBody:
           $ref: '#/components/requestBodies/ExecuteDocumentationRequest'
         responses:
@@ -291,16 +291,16 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/PartyLifecycleManagement/{partylifecyclemanagementid}/Documentation/{documentationid}/Request':
+  '/party-lifecycle-management/{party-lifecycle-management-id}/documentation/{documentation-id}/request':
       put:
         tags:
           - BQ (DDD Aggregate) - Documentation
         summary: (DDD  Service) RqBQ Request manual intervention (e.g. handle a document exchange)
         description: (DDD  Service) RqBQ Request manual intervention (e.g. handle a document exchange)
-        operationId: Documentation/Request
+        operationId: Documentation/Request        
         parameters:
-          - $ref: '#/components/parameters/partylifecyclemanagementid'
-          - $ref: '#/components/parameters/documentationid'
+          - $ref: '#/components/parameters/party-lifecycle-management-id'
+          - $ref: '#/components/parameters/documentation-id'
         requestBody:
           $ref: '#/components/requestBodies/RequestDocumentationRequest'
         responses:
@@ -318,7 +318,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/PartyLifecycleManagement/{partylifecyclemanagementid}/Documentation/{documentationid}/Retrieve':
+  '/party-lifecycle-management/{party-lifecycle-management-id}/documentation/{documentation-id}/retrieve':
       get:
         tags:
           - BQ (DDD Aggregate) - Documentation
@@ -330,8 +330,8 @@ paths:
           life-cycle administration
         operationId: Documentation/Retrieve
         parameters:
-          - $ref: '#/components/parameters/partylifecyclemanagementid'
-          - $ref: '#/components/parameters/documentationid'
+          - $ref: '#/components/parameters/party-lifecycle-management-id'
+          - $ref: '#/components/parameters/documentation-id'
         responses:
           '200':
             $ref: '#/components/responses/RetrieveDocumentationResponse'
@@ -347,7 +347,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/PartyLifecycleManagement/{partylifecyclemanagementid}/Precedents/{precedentsid}/Update':
+  '/party-lifecycle-management/{party-lifecycle-management-id}/precedents/{precedents-id}/update':
       put:
         tags:
           - BQ (DDD Aggregate) - Precedents
@@ -355,8 +355,8 @@ paths:
         description: (DDD  Service) UpBQ Update details about customer precedents
         operationId: Precedents/Update
         parameters:
-          - $ref: '#/components/parameters/partylifecyclemanagementid'
-          - $ref: '#/components/parameters/precedentsid'
+          - $ref: '#/components/parameters/party-lifecycle-management-id'
+          - $ref: '#/components/parameters/precedents-id'
         requestBody:
           $ref: '#/components/requestBodies/UpdatePrecedentsRequest'
         responses:
@@ -374,16 +374,16 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/PartyLifecycleManagement/{partylifecyclemanagementid}/Precedents/{precedentsid}/Retrieve':
+  '/party-lifecycle-management/{party-lifecycle-management-id}/precedents/{precedents-id}/retrieve':
       get:
         tags:
           - BQ (DDD Aggregate) - Precedents
         summary: (DDD  Service) ReBQ Retrieve details about customer precedent maintenance
         description: (DDD  Service) ReBQ Retrieve details about customer precedent maintenance
-        operationId: Precedents/Retrieve
+        operationId: Precedents/Retrieve        
         parameters:
-          - $ref: '#/components/parameters/partylifecyclemanagementid'
-          - $ref: '#/components/parameters/precedentsid'
+          - $ref: '#/components/parameters/party-lifecycle-management-id'
+          - $ref: '#/components/parameters/precedents-id'
         responses:
           '200':
             $ref: '#/components/responses/RetrievePrecedentsResponse'
@@ -399,7 +399,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/PartyLifecycleManagement/{partylifecyclemanagementid}/IdentityProofing/{identityproofingid}/Retrieve':
+  '/party-lifecycle-management/{party-lifecycle-management-id}/identity-proofing/{identity-proofing-id}/retrieve':
       get:
         tags:
           - BQ (DDD Aggregate) - IdentityProofing
@@ -407,8 +407,8 @@ paths:
         description: (DDD  Service) ReBQ Retrieve details about a party identity proofing routine
         operationId: IdentityProofing/Retrieve
         parameters:
-          - $ref: '#/components/parameters/partylifecyclemanagementid'
-          - $ref: '#/components/parameters/identityproofingid'
+          - $ref: '#/components/parameters/party-lifecycle-management-id'
+          - $ref: '#/components/parameters/identity-proofing-id'
         responses:
           '200':
             $ref: '#/components/responses/RetrieveIdentityProofingResponse'
@@ -3586,38 +3586,38 @@ components:
         content:
           'application/json:':
             schema:
-              $ref: '#/components/schemas/HTTPError'
+              $ref: '#/components/schemas/HTTPError'  
   parameters:
-    partylifecyclemanagementid:
-        name: partylifecyclemanagementid
+    party-lifecycle-management-id:
+        name: party-lifecycle-management-id
         in: path
         required: true
         style: simple
         schema:
           type: string
-    qualificationid:
-        name: qualificationid
+    qualification-id:
+        name: qualification-id
         in: path
         required: true
         style: simple
         schema:
           type: string
-    documentationid:
-        name: documentationid
+    documentation-id:
+        name: documentation-id
+        in: path
+        required: true
+        style: simple
+        schema:
+          type: string    
+    precedents-id:
+        name: precedents-id
         in: path
         required: true
         style: simple
         schema:
           type: string
-    precedentsid:
-        name: precedentsid
-        in: path
-        required: true
-        style: simple
-        schema:
-          type: string
-    identityproofingid:
-        name: identityproofingid
+    identity-proofing-id:
+        name: identity-proofing-id
         in: path
         required: true
         style: simple
