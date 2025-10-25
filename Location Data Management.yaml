@@ -11,7 +11,7 @@ info:
 servers:
   - url: ' https://virtserver.swaggerhub.com/BIAN-3/LocationDataManagement/12.0.1'
 paths:
-  '/LocationDataManagement/Register':
+  '/location-data-management/register':
       post:
         tags:
           - CR (DDD Aggregate) - LocationDirectoryEntry
@@ -35,7 +35,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/LocationDataManagement/{locationdatamanagementid}/Update':
+  '/location-data-management/{location-data-management-id}/update':
       put:
         tags:
           - CR (DDD Aggregate) - LocationDirectoryEntry
@@ -43,7 +43,7 @@ paths:
         description: (DDD  Service) UpCR Update details about the location's directory entry
         operationId: LocationDirectoryEntry/Update
         parameters:
-          - $ref: '#/components/parameters/locationdatamanagementid'
+          - $ref: '#/components/parameters/location-data-management-id'
         requestBody:
           $ref: '#/components/requestBodies/UpdateLocationDirectoryEntryRequest'
         responses:
@@ -61,7 +61,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/LocationDataManagement/{locationdatamanagementid}/Control':
+  '/location-data-management/{location-data-management-id}/control':
       put:
         tags:
           - CR (DDD Aggregate) - LocationDirectoryEntry
@@ -69,7 +69,7 @@ paths:
         description: (DDD  Service) CoCR Control the handling of a location entry (e.g. terminate)
         operationId: LocationDirectoryEntry/Control
         parameters:
-          - $ref: '#/components/parameters/locationdatamanagementid'
+          - $ref: '#/components/parameters/location-data-management-id'
         requestBody:
           $ref: '#/components/requestBodies/ControlLocationDirectoryEntryRequest'
         responses:
@@ -87,7 +87,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/LocationDataManagement/{locationdatamanagementid}/Request':
+  '/location-data-management/{location-data-management-id}/request':
       put:
         tags:
           - CR (DDD Aggregate) - LocationDirectoryEntry
@@ -99,7 +99,7 @@ paths:
           content)
         operationId: LocationDirectoryEntry/Request
         parameters:
-          - $ref: '#/components/parameters/locationdatamanagementid'
+          - $ref: '#/components/parameters/location-data-management-id'
         requestBody:
           $ref: '#/components/requestBodies/RequestLocationDirectoryEntryRequest'
         responses:
@@ -117,7 +117,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/LocationDataManagement/{locationdatamanagementid}/Retrieve':
+  '/location-data-management/{location-data-management-id}/retrieve':
       get:
         tags:
           - CR (DDD Aggregate) - LocationDirectoryEntry
@@ -125,7 +125,7 @@ paths:
         description: (DDD  Service) ReCR Retrieve details about a location directory entry
         operationId: LocationDirectoryEntry/Retrieve
         parameters:
-          - $ref: '#/components/parameters/locationdatamanagementid'
+          - $ref: '#/components/parameters/location-data-management-id'
         responses:
           '200':
             $ref: '#/components/responses/RetrieveLocationDirectoryEntryResponse'
@@ -141,7 +141,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/LocationDataManagement/{locationdatamanagementid}/Exchange':
+  '/location-data-management/{location-data-management-id}/exchange':
       put:
         tags:
           - CR (DDD Aggregate) - LocationDirectoryEntry
@@ -149,7 +149,7 @@ paths:
         description: (DDD  Service) EcCR Accept, verify, reject a directory entry
         operationId: LocationDirectoryEntry/Exchange
         parameters:
-          - $ref: '#/components/parameters/locationdatamanagementid'
+          - $ref: '#/components/parameters/location-data-management-id'
         requestBody:
           $ref: '#/components/requestBodies/ExchangeLocationDirectoryEntryRequest'
         responses:
@@ -167,7 +167,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/LocationDataManagement/{locationdatamanagementid}/Execute':
+  '/location-data-management/{location-data-management-id}/execute':
       put:
         tags:
           - CR (DDD Aggregate) - LocationDirectoryEntry
@@ -175,7 +175,7 @@ paths:
         description: (DDD  Service) ExCR Execute an automated action against an entry
         operationId: LocationDirectoryEntry/Execute
         parameters:
-          - $ref: '#/components/parameters/locationdatamanagementid'
+          - $ref: '#/components/parameters/location-data-management-id'
         requestBody:
           $ref: '#/components/requestBodies/ExecuteLocationDirectoryEntryRequest'
         responses:
@@ -193,7 +193,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/LocationDataManagement/{locationdatamanagementid}/Location/{locationid}/Exchange':
+  '/location-data-management/{location-data-management-id}/location/{location-id}/exchange':
       put:
         tags:
           - BQ (DDD Aggregate) - Location
@@ -202,11 +202,11 @@ paths:
           entry
         description: >-
           (DDD  Service) EcBQ Accept, verify, reject etc. details of a location directory
-          entry
+          entry        
         operationId: Location/Exchange
         parameters:
-          - $ref: '#/components/parameters/locationdatamanagementid'
-          - $ref: '#/components/parameters/locationid'
+          - $ref: '#/components/parameters/location-data-management-id'
+          - $ref: '#/components/parameters/location-id'
         requestBody:
           $ref: '#/components/requestBodies/ExchangeLocationRequest'
         responses:
@@ -221,10 +221,10 @@ paths:
           '404':
             $ref: '#/components/responses/NotFound'
           '429':
-            $ref: '#/components/responses/TooManyRequests'
+            $ref: '#/components/responses/TooManyRequests'          
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/LocationDataManagement/{locationdatamanagementid}/Location/{locationid}/Update':
+  '/location-data-management/{location-data-management-id}/location/{location-id}/update':
       put:
         tags:
           - BQ (DDD Aggregate) - Location
@@ -232,8 +232,8 @@ paths:
         description: (DDD  Service) UpBQ Update details about a location entry
         operationId: Location/Update
         parameters:
-          - $ref: '#/components/parameters/locationdatamanagementid'
-          - $ref: '#/components/parameters/locationid'
+          - $ref: '#/components/parameters/location-data-management-id'
+          - $ref: '#/components/parameters/location-id'
         requestBody:
           $ref: '#/components/requestBodies/UpdateLocationRequest'
         responses:
@@ -251,16 +251,16 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/LocationDataManagement/{locationdatamanagementid}/Location/{locationid}/Retrieve':
+  '/location-data-management/{location-data-management-id}/location/{location-id}/retrieve':
       get:
         tags:
           - BQ (DDD Aggregate) - Location
         summary: (DDD  Service) ReBQ Retrieve details about location entries in the directory
-        description: (DDD  Service) ReBQ Retrieve details about location entries in the directory
+        description: (DDD  Service) ReBQ Retrieve details about location entries in the directory        
         operationId: Location/Retrieve
         parameters:
-          - $ref: '#/components/parameters/locationdatamanagementid'
-          - $ref: '#/components/parameters/locationid'
+          - $ref: '#/components/parameters/location-data-management-id'
+          - $ref: '#/components/parameters/location-id'
         responses:
           '200':
             $ref: '#/components/responses/RetrieveLocationResponse'
@@ -273,19 +273,19 @@ paths:
           '404':
             $ref: '#/components/responses/NotFound'
           '429':
-            $ref: '#/components/responses/TooManyRequests'
+            $ref: '#/components/responses/TooManyRequests'          
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/LocationDataManagement/{locationdatamanagementid}/Use/{useid}/Update':
+  '/location-data-management/{location-data-management-id}/use/{use-id}/update':
       put:
         tags:
           - BQ (DDD Aggregate) - Use
         summary: (DDD  Service) UpBQ Update details about an usage entry for the location
-        description: (DDD  Service) UpBQ Update details about an usage entry for the location
+        description: (DDD  Service) UpBQ Update details about an usage entry for the location        
         operationId: Use/Update
         parameters:
-          - $ref: '#/components/parameters/locationdatamanagementid'
-          - $ref: '#/components/parameters/useid'
+          - $ref: '#/components/parameters/location-data-management-id'
+          - $ref: '#/components/parameters/use-id'
         requestBody:
           $ref: '#/components/requestBodies/UpdateUseRequest'
         responses:
@@ -300,10 +300,10 @@ paths:
           '404':
             $ref: '#/components/responses/NotFound'
           '429':
-            $ref: '#/components/responses/TooManyRequests'
+            $ref: '#/components/responses/TooManyRequests'          
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/LocationDataManagement/{locationdatamanagementid}/Use/{useid}/Retrieve':
+  '/location-data-management/{location-data-management-id}/use/{use-id}/retrieve':
       get:
         tags:
           - BQ (DDD Aggregate) - Use
@@ -312,11 +312,11 @@ paths:
           directory
         description: >-
           (DDD  Service) ReBQ Retrieve details about usage entries in the location
-          directory
+          directory        
         operationId: Use/Retrieve
         parameters:
-          - $ref: '#/components/parameters/locationdatamanagementid'
-          - $ref: '#/components/parameters/useid'
+          - $ref: '#/components/parameters/location-data-management-id'
+          - $ref: '#/components/parameters/use-id'
         responses:
           '200':
             $ref: '#/components/responses/RetrieveUseResponse'
@@ -329,19 +329,19 @@ paths:
           '404':
             $ref: '#/components/responses/NotFound'
           '429':
-            $ref: '#/components/responses/TooManyRequests'
+            $ref: '#/components/responses/TooManyRequests'          
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/LocationDataManagement/{locationdatamanagementid}/Occupancy/{occupancyid}/Update':
+  '/location-data-management/{location-data-management-id}/occupancy/{occupancy-id}/update':
       put:
         tags:
           - BQ (DDD Aggregate) - Occupancy
         summary: (DDD  Service) UpBQ Update details about a location's occupancy
-        description: (DDD  Service) UpBQ Update details about a location's occupancy
+        description: (DDD  Service) UpBQ Update details about a location's occupancy        
         operationId: Occupancy/Update
         parameters:
-          - $ref: '#/components/parameters/locationdatamanagementid'
-          - $ref: '#/components/parameters/occupancyid'
+          - $ref: '#/components/parameters/location-data-management-id'
+          - $ref: '#/components/parameters/occupancy-id'
         requestBody:
           $ref: '#/components/requestBodies/UpdateOccupancyRequest'
         responses:
@@ -356,10 +356,10 @@ paths:
           '404':
             $ref: '#/components/responses/NotFound'
           '429':
-            $ref: '#/components/responses/TooManyRequests'
+            $ref: '#/components/responses/TooManyRequests'          
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/LocationDataManagement/{locationdatamanagementid}/Occupancy/{occupancyid}/Retrieve':
+  '/location-data-management/{location-data-management-id}/occupancy/{occupancy-id}/retrieve':
       get:
         tags:
           - BQ (DDD Aggregate) - Occupancy
@@ -368,11 +368,11 @@ paths:
           directory
         description: >-
           (DDD  Service) ReBQ Retrieve details about location's occupancy entry in the
-          directory
+          directory        
         operationId: Occupancy/Retrieve
         parameters:
-          - $ref: '#/components/parameters/locationdatamanagementid'
-          - $ref: '#/components/parameters/occupancyid'
+          - $ref: '#/components/parameters/location-data-management-id'
+          - $ref: '#/components/parameters/occupancy-id'
         responses:
           '200':
             $ref: '#/components/responses/RetrieveOccupancyResponse'
@@ -2052,31 +2052,31 @@ components:
         content:
           'application/json:':
             schema:
-              $ref: '#/components/schemas/HTTPError'
+              $ref: '#/components/schemas/HTTPError'  
   parameters:
-    locationdatamanagementid:
-        name: locationdatamanagementid
+    location-data-management-id:
+        name: location-data-management-id
         in: path
         required: true
         style: simple
         schema:
           type: string
-    locationid:
-        name: locationid
+    location-id:
+        name: location-id
         in: path
         required: true
         style: simple
         schema:
           type: string
-    useid:
-        name: useid
+    use-id:
+        name: use-id
         in: path
         required: true
         style: simple
         schema:
           type: string
-    occupancyid:
-        name: occupancyid
+    occupancy-id:
+        name: occupancy-id
         in: path
         required: true
         style: simple
