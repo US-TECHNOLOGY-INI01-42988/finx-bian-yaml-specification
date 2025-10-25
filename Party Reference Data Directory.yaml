@@ -10,7 +10,7 @@ info:
 servers:
   - url: ' https://virtserver.swaggerhub.com/BIAN-3/PartyReferenceDataDirectory/12.0.1'
 paths:
-  '/PartyReferenceDataDirectory/Register':
+  '/party-reference-data-directory/register':
       post:
         tags:
           - CR (DDD Aggregate) - PartyReferenceDataDirectoryEntry
@@ -35,7 +35,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/PartyReferenceDataDirectory/{partyreferencedatadirectoryid}/Update':
+  '/party-reference-data-directory/{party-reference-data-directory-id}/update':
       put:
         tags:
           - CR (DDD Aggregate) - PartyReferenceDataDirectoryEntry
@@ -43,7 +43,7 @@ paths:
         description: (DDD  Service) UpCR Update details about the customer's directory entry
         operationId: PartyReferenceDataDirectoryEntry/Update
         parameters:
-          - $ref: '#/components/parameters/partyreferencedatadirectoryid'
+          - $ref: '#/components/parameters/party-reference-data-directory-id'
         requestBody:
           $ref: >-
             #/components/requestBodies/UpdatePartyReferenceDataDirectoryEntryRequest
@@ -62,7 +62,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/PartyReferenceDataDirectory/{partyreferencedatadirectoryid}/Control':
+  '/party-reference-data-directory/{party-reference-data-directory-id}/control':
       put:
         tags:
           - CR (DDD Aggregate) - PartyReferenceDataDirectoryEntry
@@ -70,7 +70,7 @@ paths:
         description: (DDD  Service) CoCR Control the handling of a customer entry (e.g. terminate)
         operationId: PartyReferenceDataDirectoryEntry/Control
         parameters:
-          - $ref: '#/components/parameters/partyreferencedatadirectoryid'
+          - $ref: '#/components/parameters/party-reference-data-directory-id'
         requestBody:
           $ref: >-
             #/components/requestBodies/ControlPartyReferenceDataDirectoryEntryRequest
@@ -89,7 +89,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/PartyReferenceDataDirectory/{partyreferencedatadirectoryid}/Request':
+  '/party-reference-data-directory/{party-reference-data-directory-id}/request':
       put:
         tags:
           - CR (DDD Aggregate) - PartyReferenceDataDirectoryEntry
@@ -101,7 +101,7 @@ paths:
           content)
         operationId: PartyReferenceDataDirectoryEntry/Request
         parameters:
-          - $ref: '#/components/parameters/partyreferencedatadirectoryid'
+          - $ref: '#/components/parameters/party-reference-data-directory-id'
         requestBody:
           $ref: >-
             #/components/requestBodies/RequestPartyReferenceDataDirectoryEntryRequest
@@ -120,7 +120,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/PartyReferenceDataDirectory/{partyreferencedatadirectoryid}/Retrieve':
+  '/party-reference-data-directory/{party-reference-data-directory-id}/retrieve':
       get:
         tags:
           - CR (DDD Aggregate) - PartyReferenceDataDirectoryEntry
@@ -128,7 +128,7 @@ paths:
         description: (DDD  Service) ReCR Retrieve details about a customer directory entry
         operationId: PartyReferenceDataDirectoryEntry/Retrieve
         parameters:
-          - $ref: '#/components/parameters/partyreferencedatadirectoryid'
+          - $ref: '#/components/parameters/party-reference-data-directory-id'
         responses:
           '200':
             $ref: >-
@@ -145,7 +145,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/PartyReferenceDataDirectory/{partyreferencedatadirectoryid}/Exchange':
+  '/party-reference-data-directory/{party-reference-data-directory-id}/exchange':
       put:
         tags:
           - CR (DDD Aggregate) - PartyReferenceDataDirectoryEntry
@@ -153,7 +153,7 @@ paths:
         description: (DDD  Service) EcCR Accept, verify, reject a directory entry
         operationId: PartyReferenceDataDirectoryEntry/Exchange
         parameters:
-          - $ref: '#/components/parameters/partyreferencedatadirectoryid'
+          - $ref: '#/components/parameters/party-reference-data-directory-id'
         requestBody:
           $ref: >-
             #/components/requestBodies/ExchangePartyReferenceDataDirectoryEntryRequest
@@ -172,7 +172,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/PartyReferenceDataDirectory/{partyreferencedatadirectoryid}/Execute':
+  '/party-reference-data-directory/{party-reference-data-directory-id}/execute':
       put:
         tags:
           - CR (DDD Aggregate) - PartyReferenceDataDirectoryEntry
@@ -180,7 +180,7 @@ paths:
         description: (DDD  Service) ExCR Execute an automated action against an entry
         operationId: PartyReferenceDataDirectoryEntry/Execute
         parameters:
-          - $ref: '#/components/parameters/partyreferencedatadirectoryid'
+          - $ref: '#/components/parameters/party-reference-data-directory-id'
         requestBody:
           $ref: >-
             #/components/requestBodies/ExecutePartyReferenceDataDirectoryEntryRequest
@@ -199,7 +199,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/PartyReferenceDataDirectory/{partyreferencedatadirectoryid}/Demographics/{demographicsid}/Exchange':
+  '/party-reference-data-directory/{party-reference-data-directory-id}/demographics/{demographics-id}/exchange':
       put:
         tags:
           - BQ (DDD Aggregate) - Demographics
@@ -211,8 +211,8 @@ paths:
           entry
         operationId: Demographics/Exchange
         parameters:
-          - $ref: '#/components/parameters/partyreferencedatadirectoryid'
-          - $ref: '#/components/parameters/demographicsid'
+          - $ref: '#/components/parameters/party-reference-data-directory-id'
+          - $ref: '#/components/parameters/demographics-id'
         requestBody:
           $ref: '#/components/requestBodies/ExchangeDemographicsRequest'
         responses:
@@ -230,7 +230,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/PartyReferenceDataDirectory/{partyreferencedatadirectoryid}/Reference/{referenceid}/Update':
+  '/party-reference-data-directory/{party-reference-data-directory-id}/reference/{reference-id}/update':
       put:
         tags:
           - BQ (DDD Aggregate) - Reference
@@ -238,8 +238,8 @@ paths:
         description: (DDD  Service) UpBQ Update details about a reference entry for the customer
         operationId: Reference/Update
         parameters:
-          - $ref: '#/components/parameters/partyreferencedatadirectoryid'
-          - $ref: '#/components/parameters/referenceid'
+          - $ref: '#/components/parameters/party-reference-data-directory-id'
+          - $ref: '#/components/parameters/reference-id'
         requestBody:
           $ref: '#/components/requestBodies/UpdateReferenceRequest'
         responses:
@@ -257,7 +257,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/PartyReferenceDataDirectory/{partyreferencedatadirectoryid}/Reference/{referenceid}/Retrieve':
+  '/party-reference-data-directory/{party-reference-data-directory-id}/reference/{reference-id}/retrieve':
       get:
         tags:
           - BQ (DDD Aggregate) - Reference
@@ -265,8 +265,8 @@ paths:
         description: (DDD  Service) ReBQ Retrieve details about reference entries in the directory
         operationId: Reference/Retrieve
         parameters:
-          - $ref: '#/components/parameters/partyreferencedatadirectoryid'
-          - $ref: '#/components/parameters/referenceid'
+          - $ref: '#/components/parameters/party-reference-data-directory-id'
+          - $ref: '#/components/parameters/reference-id'
         responses:
           '200':
             $ref: '#/components/responses/RetrieveReferenceResponse'
@@ -282,7 +282,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/PartyReferenceDataDirectory/{partyreferencedatadirectoryid}/Associations/{associationsid}/Update':
+  '/party-reference-data-directory/{party-reference-data-directory-id}/associations/{associations-id}/update':
       put:
         tags:
           - BQ (DDD Aggregate) - Associations
@@ -290,8 +290,8 @@ paths:
         description: (DDD  Service) UpBQ Update details about an association entry for the customer
         operationId: Associations/Update
         parameters:
-          - $ref: '#/components/parameters/partyreferencedatadirectoryid'
-          - $ref: '#/components/parameters/associationsid'
+          - $ref: '#/components/parameters/party-reference-data-directory-id'
+          - $ref: '#/components/parameters/associations-id'
         requestBody:
           $ref: '#/components/requestBodies/UpdateAssociationsRequest'
         responses:
@@ -309,7 +309,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/PartyReferenceDataDirectory/{partyreferencedatadirectoryid}/Associations/{associationsid}/Retrieve':
+  '/party-reference-data-directory/{party-reference-data-directory-id}/associations/{associations-id}/retrieve':
       get:
         tags:
           - BQ (DDD Aggregate) - Associations
@@ -321,8 +321,8 @@ paths:
           record
         operationId: Associations/Retrieve
         parameters:
-          - $ref: '#/components/parameters/partyreferencedatadirectoryid'
-          - $ref: '#/components/parameters/associationsid'
+          - $ref: '#/components/parameters/party-reference-data-directory-id'
+          - $ref: '#/components/parameters/associations-id'
         responses:
           '200':
             $ref: '#/components/responses/RetrieveAssociationsResponse'
@@ -338,7 +338,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/PartyReferenceDataDirectory/{partyreferencedatadirectoryid}/Demographics/{demographicsid}/Update':
+  '/party-reference-data-directory/{party-reference-data-directory-id}/demographics/{demographics-id}/update':
       put:
         tags:
           - BQ (DDD Aggregate) - Demographics
@@ -346,8 +346,8 @@ paths:
         description: (DDD  Service) UpBQ Update details about a customer's demographic entry
         operationId: Demographics/Update
         parameters:
-          - $ref: '#/components/parameters/partyreferencedatadirectoryid'
-          - $ref: '#/components/parameters/demographicsid'
+          - $ref: '#/components/parameters/party-reference-data-directory-id'
+          - $ref: '#/components/parameters/demographics-id'
         requestBody:
           $ref: '#/components/requestBodies/UpdateDemographicsRequest'
         responses:
@@ -365,7 +365,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/PartyReferenceDataDirectory/{partyreferencedatadirectoryid}/Demographics/{demographicsid}/Retrieve':
+  '/party-reference-data-directory/{party-reference-data-directory-id}/demographics/{demographics-id}/retrieve':
       get:
         tags:
           - BQ (DDD Aggregate) - Demographics
@@ -377,8 +377,8 @@ paths:
           directory
         operationId: Demographics/Retrieve
         parameters:
-          - $ref: '#/components/parameters/partyreferencedatadirectoryid'
-          - $ref: '#/components/parameters/demographicsid'
+          - $ref: '#/components/parameters/party-reference-data-directory-id'
+          - $ref: '#/components/parameters/demographics-id'
         responses:
           '200':
             $ref: '#/components/responses/RetrieveDemographicsResponse'
@@ -394,7 +394,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/PartyReferenceDataDirectory/{partyreferencedatadirectoryid}/BankRelations/{bankrelationsid}/Update':
+  '/party-reference-data-directory/{party-reference-data-directory-id}/bank-relations/{bank-relations-id}/update':
       put:
         tags:
           - BQ (DDD Aggregate) - BankRelations
@@ -406,8 +406,8 @@ paths:
           the customer
         operationId: BankRelations/Update
         parameters:
-          - $ref: '#/components/parameters/partyreferencedatadirectoryid'
-          - $ref: '#/components/parameters/bankrelationsid'
+          - $ref: '#/components/parameters/party-reference-data-directory-id'
+          - $ref: '#/components/parameters/bank-relations-id'
         requestBody:
           $ref: '#/components/requestBodies/UpdateBankRelationsRequest'
         responses:
@@ -425,7 +425,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/PartyReferenceDataDirectory/{partyreferencedatadirectoryid}/BankRelations/{bankrelationsid}/Retrieve':
+  '/party-reference-data-directory/{party-reference-data-directory-id}/bank-relations/{bank-relations-id}/retrieve':
       get:
         tags:
           - BQ (DDD Aggregate) - BankRelations
@@ -437,8 +437,8 @@ paths:
           directory
         operationId: BankRelations/Retrieve
         parameters:
-          - $ref: '#/components/parameters/partyreferencedatadirectoryid'
-          - $ref: '#/components/parameters/bankrelationsid'
+          - $ref: '#/components/parameters/party-reference-data-directory-id'
+          - $ref: '#/components/parameters/bank-relations-id'
         responses:
           '200':
             $ref: '#/components/responses/RetrieveBankRelationsResponse'
@@ -454,7 +454,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/PartyReferenceDataDirectory/{partyreferencedatadirectoryid}/Associations/Register':
+  '/party-reference-data-directory/{party-reference-data-directory-id}/associations/register':
       post:
         tags:
           - BQ (DDD Aggregate) - Associations
@@ -462,7 +462,7 @@ paths:
         description: (DDD  Service) Capture Association Details
         operationId: Associations/Register
         parameters:
-          - $ref: '#/components/parameters/partyreferencedatadirectoryid'
+          - $ref: '#/components/parameters/party-reference-data-directory-id'
         requestBody:
           $ref: '#/components/requestBodies/RegisterAssociationsRequest'
         responses:
@@ -4014,36 +4014,36 @@ components:
             schema:
               $ref: '#/components/schemas/HTTPError'
   parameters:
-    partyreferencedatadirectoryid:
-        name: partyreferencedatadirectoryid
+    party-reference-data-directory-id:
+        name: party-reference-data-directory-id
         in: path
         required: true
         style: simple
         schema:
           type: string
-    demographicsid:
-        name: demographicsid
+    demographics-id:
+        name: demographics-id
         in: path
         required: true
         style: simple
         schema:
           type: string
-    referenceid:
-        name: referenceid
+    reference-id:
+        name: reference-id
         in: path
         required: true
         style: simple
         schema:
           type: string
-    associationsid:
-        name: associationsid
+    associations-id:
+        name: associations-id
         in: path
         required: true
         style: simple
         schema:
           type: string
-    bankrelationsid:
-        name: bankrelationsid
+    bank-relations-id:
+        name: bank-relations-id
         in: path
         required: true
         style: simple
