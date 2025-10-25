@@ -9,8 +9,8 @@ info:
   version: 13.0.0
 servers:
   - url: ' https://virtserver.swaggerhub.com/BIAN-3/DocumentDirectory/12.0.1'
-paths:
-  '/DocumentDirectory/{documentdirectoryid}/Exchange':
+paths:  
+  '/document-directory/{document-directory-id}/exchange':
       put:
         tags:
           - CR (DDD Aggregate) - DocumentDirectoryEntry
@@ -18,7 +18,7 @@ paths:
         description: (DDD  Service) Exchange Document Directory Entry
         operationId: DocumentDirectoryEntry/Exchange
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
+          - $ref: '#/components/parameters/document-directory-id'
         requestBody:
           $ref: '#/components/requestBodies/ExchangeDocumentDirectoryEntryRequest'
         responses:
@@ -33,10 +33,10 @@ paths:
           '404':
             $ref: '#/components/responses/NotFound'
           '429':
-            $ref: '#/components/responses/TooManyRequests'
+            $ref: '#/components/responses/TooManyRequests'          
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/Request':
+  '/document-directory/{document-directory-id}/request':
       put:
         tags:
           - CR (DDD Aggregate) - DocumentDirectoryEntry
@@ -44,7 +44,7 @@ paths:
         description: (DDD  Service) Request Document Directory Entry
         operationId: DocumentDirectoryEntry/Request
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
+          - $ref: '#/components/parameters/document-directory-id'
         requestBody:
           $ref: '#/components/requestBodies/RequestDocumentDirectoryEntryRequest'
         responses:
@@ -62,7 +62,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/Control':
+  '/document-directory/{document-directory-id}/control':
       put:
         tags:
           - CR (DDD Aggregate) - DocumentDirectoryEntry
@@ -70,7 +70,7 @@ paths:
         description: (DDD  Service) Control Document Directory Entry
         operationId: DocumentDirectoryEntry/Control
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
+          - $ref: '#/components/parameters/document-directory-id'
         requestBody:
           $ref: '#/components/requestBodies/ControlDocumentDirectoryEntryRequest'
         responses:
@@ -88,7 +88,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/Execute':
+  '/document-directory/{document-directory-id}/execute':
       put:
         tags:
           - CR (DDD Aggregate) - DocumentDirectoryEntry
@@ -96,7 +96,7 @@ paths:
         description: (DDD  Service) Execute Document Directory Entry
         operationId: DocumentDirectoryEntry/Execute
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
+          - $ref: '#/components/parameters/document-directory-id'
         requestBody:
           $ref: '#/components/requestBodies/ExecuteDocumentDirectoryEntryRequest'
         responses:
@@ -114,7 +114,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/Notify':
+  '/document-directory/{document-directory-id}/notify':
       get:
         tags:
           - CR (DDD Aggregate) - DocumentDirectoryEntry
@@ -122,7 +122,7 @@ paths:
         description: (DDD  Service) Notify Document Directory Entry
         operationId: DocumentDirectoryEntry/Notify
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
+          - $ref: '#/components/parameters/document-directory-id'
         responses:
           '200':
             $ref: '#/components/responses/NotifyDocumentDirectoryEntryResponse'
@@ -138,7 +138,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/Register':
+  '/document-directory/register':
       post:
         tags:
           - CR (DDD Aggregate) - DocumentDirectoryEntry
@@ -162,7 +162,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/Retrieve':
+  '/document-directory/{document-directory-id}/retrieve':
       get:
         tags:
           - CR (DDD Aggregate) - DocumentDirectoryEntry
@@ -170,7 +170,7 @@ paths:
         description: (DDD  Service) Retrieve Document Directory Entry
         operationId: DocumentDirectoryEntry/Retrieve
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
+          - $ref: '#/components/parameters/document-directory-id'
         responses:
           '200':
             $ref: '#/components/responses/RetrieveDocumentDirectoryEntryResponse'
@@ -186,7 +186,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/Update':
+  '/document-directory/{document-directory-id}/update':
       put:
         tags:
           - CR (DDD Aggregate) - DocumentDirectoryEntry
@@ -194,7 +194,7 @@ paths:
         description: (DDD  Service) Update Document Directory Entry
         operationId: DocumentDirectoryEntry/Update
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
+          - $ref: '#/components/parameters/document-directory-id'
         requestBody:
           $ref: '#/components/requestBodies/UpdateDocumentDirectoryEntryRequest'
         responses:
@@ -212,7 +212,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/DocumentAmendmentProperties/{documentamendmentpropertiesid}/Execute':
+  '/document-directory/{document-directory-id}/document-amendment-properties/{document-amendment-properties-id}/execute':
       put:
         tags:
           - BQ (DDD Aggregate) - DocumentAmendmentProperties
@@ -220,8 +220,8 @@ paths:
         description: (DDD  Service) Execute Document Amendment Properties
         operationId: DocumentAmendmentProperties/Execute
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
-          - $ref: '#/components/parameters/documentamendmentpropertiesid'
+          - $ref: '#/components/parameters/document-directory-id'
+          - $ref: '#/components/parameters/document-amendment-properties-id'
         requestBody:
           $ref: '#/components/requestBodies/ExecuteDocumentAmendmentPropertiesRequest'
         responses:
@@ -239,7 +239,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/DocumentArchivingProperties/{documentarchivingpropertiesid}/Execute':
+  '/document-directory/{document-directory-id}/document-archiving-properties/{document-archiving-properties-id}/execute':
       put:
         tags:
           - BQ (DDD Aggregate) - DocumentArchivingProperties
@@ -247,8 +247,8 @@ paths:
         description: (DDD  Service) Execute Document Archiving Properties
         operationId: DocumentArchivingProperties/Execute
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
-          - $ref: '#/components/parameters/documentarchivingpropertiesid'
+          - $ref: '#/components/parameters/document-directory-id'
+          - $ref: '#/components/parameters/document-archiving-properties-id'
         requestBody:
           $ref: '#/components/requestBodies/ExecuteDocumentArchivingPropertiesRequest'
         responses:
@@ -266,7 +266,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/DocumentReferenceProperties/{documentreferencepropertiesid}/Execute':
+  '/document-directory/{document-directory-id}/document-reference-properties/{document-reference-properties-id}/execute':
       put:
         tags:
           - BQ (DDD Aggregate) - DocumentReferenceProperties
@@ -274,8 +274,8 @@ paths:
         description: (DDD  Service) Execute Document Reference Properties
         operationId: DocumentReferenceProperties/Execute
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
-          - $ref: '#/components/parameters/documentreferencepropertiesid'
+          - $ref: '#/components/parameters/document-directory-id'
+          - $ref: '#/components/parameters/document-reference-properties-id'
         requestBody:
           $ref: '#/components/requestBodies/ExecuteDocumentReferencePropertiesRequest'
         responses:
@@ -293,7 +293,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/DocumentUpdateHistoryProperties/{documentupdatehistorypropertiesid}/Execute':
+  '/document-directory/{document-directory-id}/document-update-history-properties/{document-update-history-properties-id}/execute':
       put:
         tags:
           - BQ (DDD Aggregate) - DocumentUpdateHistoryProperties
@@ -301,8 +301,8 @@ paths:
         description: (DDD  Service) Execute Document Update History Properties
         operationId: DocumentUpdateHistoryProperties/Execute
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
-          - $ref: '#/components/parameters/documentupdatehistorypropertiesid'
+          - $ref: '#/components/parameters/document-directory-id'
+          - $ref: '#/components/parameters/document-update-history-properties-id'
         requestBody:
           $ref: >-
             #/components/requestBodies/ExecuteDocumentUpdateHistoryPropertiesRequest
@@ -322,7 +322,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/DocumentVerificationProperties/{documentverificationpropertiesid}/Execute':
+  '/document-directory/{document-directory-id}/document-verification-properties/{document-verification-properties-id}/execute':
       put:
         tags:
           - BQ (DDD Aggregate) - DocumentVerificationProperties
@@ -330,8 +330,8 @@ paths:
         description: (DDD  Service) Execute Document Verification Properties
         operationId: DocumentVerificationProperties/Execute
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
-          - $ref: '#/components/parameters/documentverificationpropertiesid'
+          - $ref: '#/components/parameters/document-directory-id'
+          - $ref: '#/components/parameters/document-verification-properties-id'
         requestBody:
           $ref: >-
             #/components/requestBodies/ExecuteDocumentVerificationPropertiesRequest
@@ -351,7 +351,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/DocumentVersionProperties/{documentversionpropertiesid}/Execute':
+  '/document-directory/{document-directory-id}/document-version-properties/{document-version-properties-id}/execute':
       put:
         tags:
           - BQ (DDD Aggregate) - DocumentVersionProperties
@@ -359,8 +359,8 @@ paths:
         description: (DDD  Service) Execute Document Version Properties
         operationId: DocumentVersionProperties/Execute
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
-          - $ref: '#/components/parameters/documentversionpropertiesid'
+          - $ref: '#/components/parameters/document-directory-id'
+          - $ref: '#/components/parameters/document-version-properties-id'
         requestBody:
           $ref: '#/components/requestBodies/ExecuteDocumentVersionPropertiesRequest'
         responses:
@@ -378,7 +378,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/DocumentAmendmentProperties/{documentamendmentpropertiesid}/Notify':
+  '/document-directory/{document-directory-id}/document-amendment-properties/{document-amendment-properties-id}/notify':
       get:
         tags:
           - BQ (DDD Aggregate) - DocumentAmendmentProperties
@@ -386,8 +386,8 @@ paths:
         description: (DDD  Service) Notify Document Amendment Properties
         operationId: DocumentAmendmentProperties/Notify
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
-          - $ref: '#/components/parameters/documentamendmentpropertiesid'
+          - $ref: '#/components/parameters/document-directory-id'
+          - $ref: '#/components/parameters/document-amendment-properties-id'
         responses:
           '200':
             $ref: '#/components/responses/NotifyDocumentAmendmentPropertiesResponse'
@@ -403,7 +403,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/DocumentArchivingProperties/{documentarchivingpropertiesid}/Notify':
+  '/document-directory/{document-directory-id}/document-archiving-properties/{document-archiving-properties-id}/notify':
       get:
         tags:
           - BQ (DDD Aggregate) - DocumentArchivingProperties
@@ -411,8 +411,8 @@ paths:
         description: (DDD  Service) Notify Document Archiving Properties
         operationId: DocumentArchivingProperties/Notify
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
-          - $ref: '#/components/parameters/documentarchivingpropertiesid'
+          - $ref: '#/components/parameters/document-directory-id'
+          - $ref: '#/components/parameters/document-archiving-properties-id'
         responses:
           '200':
             $ref: '#/components/responses/NotifyDocumentArchivingPropertiesResponse'
@@ -428,7 +428,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/DocumentReferenceProperties/{documentreferencepropertiesid}/Notify':
+  '/document-directory/{document-directory-id}/document-reference-properties/{document-reference-properties-id}/notify':
       get:
         tags:
           - BQ (DDD Aggregate) - DocumentReferenceProperties
@@ -436,8 +436,8 @@ paths:
         description: (DDD  Service) Notify Document Reference Properties
         operationId: DocumentReferenceProperties/Notify
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
-          - $ref: '#/components/parameters/documentreferencepropertiesid'
+          - $ref: '#/components/parameters/document-directory-id'
+          - $ref: '#/components/parameters/document-reference-properties-id'
         responses:
           '200':
             $ref: '#/components/responses/NotifyDocumentReferencePropertiesResponse'
@@ -453,7 +453,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/DocumentUpdateHistoryProperties/{documentupdatehistorypropertiesid}/Notify':
+  '/document-directory/{document-directory-id}/document-update-history-properties/{document-update-history-properties-id}/notify':
       get:
         tags:
           - BQ (DDD Aggregate) - DocumentUpdateHistoryProperties
@@ -461,8 +461,8 @@ paths:
         description: (DDD  Service) Notify Document Update History Properties
         operationId: DocumentUpdateHistoryProperties/Notify
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
-          - $ref: '#/components/parameters/documentupdatehistorypropertiesid'
+          - $ref: '#/components/parameters/document-directory-id'
+          - $ref: '#/components/parameters/document-update-history-properties-id'
         responses:
           '200':
             $ref: >-
@@ -479,7 +479,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/DocumentVerificationProperties/{documentverificationpropertiesid}/Notify':
+  '/document-directory/{document-directory-id}/document-verification-properties/{document-verification-properties-id}/notify':
       get:
         tags:
           - BQ (DDD Aggregate) - DocumentVerificationProperties
@@ -487,8 +487,8 @@ paths:
         description: (DDD  Service) Notify Document Verification Properties
         operationId: DocumentVerificationProperties/Notify
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
-          - $ref: '#/components/parameters/documentverificationpropertiesid'
+          - $ref: '#/components/parameters/document-directory-id'
+          - $ref: '#/components/parameters/document-verification-properties-id'
         responses:
           '200':
             $ref: >-
@@ -505,7 +505,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/DocumentVersionProperties/{documentversionpropertiesid}/Notify':
+  '/document-directory/{document-directory-id}/document-version-properties/{document-version-properties-id}/notify':
       get:
         tags:
           - BQ (DDD Aggregate) - DocumentVersionProperties
@@ -513,8 +513,8 @@ paths:
         description: (DDD  Service) Notify Document Version Properties
         operationId: DocumentVersionProperties/Notify
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
-          - $ref: '#/components/parameters/documentversionpropertiesid'
+          - $ref: '#/components/parameters/document-directory-id'
+          - $ref: '#/components/parameters/document-version-properties-id'
         responses:
           '200':
             $ref: '#/components/responses/NotifyDocumentVersionPropertiesResponse'
@@ -530,7 +530,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/DocumentAmendmentProperties/Register':
+  '/document-directory/{document-directory-id}/document-amendment-properties/register':
       post:
         tags:
           - BQ (DDD Aggregate) - DocumentAmendmentProperties
@@ -538,7 +538,7 @@ paths:
         description: (DDD  Service) Register Document Amendment Properties
         operationId: DocumentAmendmentProperties/Register
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
+          - $ref: '#/components/parameters/document-directory-id'
         requestBody:
           $ref: >-
             #/components/requestBodies/RegisterDocumentAmendmentPropertiesRequest
@@ -557,7 +557,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/DocumentArchivingProperties/Register':
+  '/document-directory/{document-directory-id}/document-archiving-properties/register':
       post:
         tags:
           - BQ (DDD Aggregate) - DocumentArchivingProperties
@@ -565,7 +565,7 @@ paths:
         description: (DDD  Service) Register Document Archiving Properties
         operationId: DocumentArchivingProperties/Register
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
+          - $ref: '#/components/parameters/document-directory-id'
         requestBody:
           $ref: >-
             #/components/requestBodies/RegisterDocumentArchivingPropertiesRequest
@@ -584,7 +584,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/DocumentReferenceProperties/Register':
+  '/document-directory/{document-directory-id}/document-reference-properties/register':
       post:
         tags:
           - BQ (DDD Aggregate) - DocumentReferenceProperties
@@ -592,7 +592,7 @@ paths:
         description: (DDD  Service) Register Document Reference Properties
         operationId: DocumentReferenceProperties/Register
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
+          - $ref: '#/components/parameters/document-directory-id'
         requestBody:
           $ref: >-
             #/components/requestBodies/RegisterDocumentReferencePropertiesRequest
@@ -608,10 +608,10 @@ paths:
           '404':
             $ref: '#/components/responses/NotFound'
           '429':
-            $ref: '#/components/responses/TooManyRequests'
+            $ref: '#/components/responses/TooManyRequests'          
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/DocumentUpdateHistoryProperties/Register':
+  '/document-directory/{document-directory-id}/document-update-history-properties/register':
       post:
         tags:
           - BQ (DDD Aggregate) - DocumentUpdateHistoryProperties
@@ -619,7 +619,7 @@ paths:
         description: (DDD  Service) Register Document Update History Properties
         operationId: DocumentUpdateHistoryProperties/Register
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
+          - $ref: '#/components/parameters/document-directory-id'
         requestBody:
           $ref: >-
             #/components/requestBodies/RegisterDocumentUpdateHistoryPropertiesRequest
@@ -639,7 +639,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/DocumentVerificationProperties/Register':
+  '/document-directory/{document-directory-id}/document-verification-properties/register':
       post:
         tags:
           - BQ (DDD Aggregate) - DocumentVerificationProperties
@@ -647,7 +647,7 @@ paths:
         description: (DDD  Service) Register Document Verification Properties
         operationId: DocumentVerificationProperties/Register
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
+          - $ref: '#/components/parameters/document-directory-id'
         requestBody:
           $ref: >-
             #/components/requestBodies/RegisterDocumentVerificationPropertiesRequest
@@ -667,7 +667,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/DocumentVersionProperties/Register':
+  '/document-directory/{document-directory-id}/document-version-properties/register':
       post:
         tags:
           - BQ (DDD Aggregate) - DocumentVersionProperties
@@ -675,7 +675,7 @@ paths:
         description: (DDD  Service) Register Document Version Properties
         operationId: DocumentVersionProperties/Register
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
+          - $ref: '#/components/parameters/document-directory-id'
         requestBody:
           $ref: '#/components/requestBodies/RegisterDocumentVersionPropertiesRequest'
         responses:
@@ -693,7 +693,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/DocumentAmendmentProperties/{documentamendmentpropertiesid}/Request':
+  '/document-directory/{document-directory-id}/document-amendment-properties/{document-amendment-properties-id}/request':
       put:
         tags:
           - BQ (DDD Aggregate) - DocumentAmendmentProperties
@@ -701,8 +701,8 @@ paths:
         description: (DDD  Service) Request Document Amendment Properties
         operationId: DocumentAmendmentProperties/Request
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
-          - $ref: '#/components/parameters/documentamendmentpropertiesid'
+          - $ref: '#/components/parameters/document-directory-id'
+          - $ref: '#/components/parameters/document-amendment-properties-id'
         requestBody:
           $ref: '#/components/requestBodies/RequestDocumentAmendmentPropertiesRequest'
         responses:
@@ -720,7 +720,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/DocumentArchivingProperties/{documentarchivingpropertiesid}/Request':
+  '/document-directory/{document-directory-id}/document-archiving-properties/{document-archiving-properties-id}/request':
       put:
         tags:
           - BQ (DDD Aggregate) - DocumentArchivingProperties
@@ -728,8 +728,8 @@ paths:
         description: (DDD  Service) Request Document Archiving Properties
         operationId: DocumentArchivingProperties/Request
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
-          - $ref: '#/components/parameters/documentarchivingpropertiesid'
+          - $ref: '#/components/parameters/document-directory-id'
+          - $ref: '#/components/parameters/document-archiving-properties-id'
         requestBody:
           $ref: '#/components/requestBodies/RequestDocumentArchivingPropertiesRequest'
         responses:
@@ -747,7 +747,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/DocumentReferenceProperties/{documentreferencepropertiesid}/Request':
+  '/document-directory/{document-directory-id}/document-reference-properties/{document-reference-properties-id}/request':
       put:
         tags:
           - BQ (DDD Aggregate) - DocumentReferenceProperties
@@ -755,8 +755,8 @@ paths:
         description: (DDD  Service) Request Document Reference Properties
         operationId: DocumentReferenceProperties/Request
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
-          - $ref: '#/components/parameters/documentreferencepropertiesid'
+          - $ref: '#/components/parameters/document-directory-id'
+          - $ref: '#/components/parameters/document-reference-properties-id'
         requestBody:
           $ref: '#/components/requestBodies/RequestDocumentReferencePropertiesRequest'
         responses:
@@ -774,7 +774,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/DocumentUpdateHistoryProperties/{documentupdatehistorypropertiesid}/Request':
+  '/document-directory/{document-directory-id}/document-update-history-properties/{document-update-history-properties-id}/request':
       put:
         tags:
           - BQ (DDD Aggregate) - DocumentUpdateHistoryProperties
@@ -782,8 +782,8 @@ paths:
         description: (DDD  Service) Request Document Update History Properties
         operationId: DocumentUpdateHistoryProperties/Request
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
-          - $ref: '#/components/parameters/documentupdatehistorypropertiesid'
+          - $ref: '#/components/parameters/document-directory-id'
+          - $ref: '#/components/parameters/document-update-history-properties-id'
         requestBody:
           $ref: >-
             #/components/requestBodies/RequestDocumentUpdateHistoryPropertiesRequest
@@ -803,7 +803,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/DocumentVerificationProperties/{documentverificationpropertiesid}/Request':
+  '/document-directory/{document-directory-id}/document-verification-properties/{document-verification-properties-id}/request':
       put:
         tags:
           - BQ (DDD Aggregate) - DocumentVerificationProperties
@@ -811,8 +811,8 @@ paths:
         description: (DDD  Service) Request Document Verification Properties
         operationId: DocumentVerificationProperties/Request
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
-          - $ref: '#/components/parameters/documentverificationpropertiesid'
+          - $ref: '#/components/parameters/document-directory-id'
+          - $ref: '#/components/parameters/document-verification-properties-id'
         requestBody:
           $ref: >-
             #/components/requestBodies/RequestDocumentVerificationPropertiesRequest
@@ -832,7 +832,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/DocumentVersionProperties/{documentversionpropertiesid}/Request':
+  '/document-directory/{document-directory-id}/document-version-properties/{document-version-properties-id}/request':
       put:
         tags:
           - BQ (DDD Aggregate) - DocumentVersionProperties
@@ -840,8 +840,8 @@ paths:
         description: (DDD  Service) Request Document Version Properties
         operationId: DocumentVersionProperties/Request
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
-          - $ref: '#/components/parameters/documentversionpropertiesid'
+          - $ref: '#/components/parameters/document-directory-id'
+          - $ref: '#/components/parameters/document-version-properties-id'
         requestBody:
           $ref: '#/components/requestBodies/RequestDocumentVersionPropertiesRequest'
         responses:
@@ -856,10 +856,10 @@ paths:
           '404':
             $ref: '#/components/responses/NotFound'
           '429':
-            $ref: '#/components/responses/TooManyRequests'
+            $ref: '#/components/responses/TooManyRequests'          
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/DocumentAmendmentProperties/{documentamendmentpropertiesid}/Retrieve':
+  '/document-directory/{document-directory-id}/document-amendment-properties/{document-amendment-properties-id}/retrieve':
       get:
         tags:
           - BQ (DDD Aggregate) - DocumentAmendmentProperties
@@ -867,8 +867,8 @@ paths:
         description: (DDD  Service) Retrieve Document Amendment Properties
         operationId: DocumentAmendmentProperties/Retrieve
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
-          - $ref: '#/components/parameters/documentamendmentpropertiesid'
+          - $ref: '#/components/parameters/document-directory-id'
+          - $ref: '#/components/parameters/document-amendment-properties-id'
         responses:
           '200':
             $ref: '#/components/responses/RetrieveDocumentAmendmentPropertiesResponse'
@@ -884,7 +884,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/DocumentArchivingProperties/{documentarchivingpropertiesid}/Retrieve':
+  '/document-directory/{document-directory-id}/document-archiving-properties/{document-archiving-properties-id}/retrieve':
       get:
         tags:
           - BQ (DDD Aggregate) - DocumentArchivingProperties
@@ -892,8 +892,8 @@ paths:
         description: (DDD  Service) Retrieve Document Archiving Properties
         operationId: DocumentArchivingProperties/Retrieve
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
-          - $ref: '#/components/parameters/documentarchivingpropertiesid'
+          - $ref: '#/components/parameters/document-directory-id'
+          - $ref: '#/components/parameters/document-archiving-properties-id'
         responses:
           '200':
             $ref: '#/components/responses/RetrieveDocumentArchivingPropertiesResponse'
@@ -909,7 +909,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/DocumentReferenceProperties/{documentreferencepropertiesid}/Retrieve':
+  '/document-directory/{document-directory-id}/document-reference-properties/{document-reference-properties-id}/retrieve':
       get:
         tags:
           - BQ (DDD Aggregate) - DocumentReferenceProperties
@@ -917,8 +917,8 @@ paths:
         description: (DDD  Service) Retrieve Document Reference Properties
         operationId: DocumentReferenceProperties/Retrieve
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
-          - $ref: '#/components/parameters/documentreferencepropertiesid'
+          - $ref: '#/components/parameters/document-directory-id'
+          - $ref: '#/components/parameters/document-reference-properties-id'
         responses:
           '200':
             $ref: '#/components/responses/RetrieveDocumentReferencePropertiesResponse'
@@ -934,7 +934,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/DocumentUpdateHistoryProperties/{documentupdatehistorypropertiesid}/Retrieve':
+  '/document-directory/{document-directory-id}/document-update-history-properties/{document-update-history-properties-id}/retrieve':
       get:
         tags:
           - BQ (DDD Aggregate) - DocumentUpdateHistoryProperties
@@ -942,8 +942,8 @@ paths:
         description: (DDD  Service) Retrieve Document Update History Properties
         operationId: DocumentUpdateHistoryProperties/Retrieve
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
-          - $ref: '#/components/parameters/documentupdatehistorypropertiesid'
+          - $ref: '#/components/parameters/document-directory-id'
+          - $ref: '#/components/parameters/document-update-history-properties-id'
         responses:
           '200':
             $ref: >-
@@ -960,7 +960,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/DocumentVerificationProperties/{documentverificationpropertiesid}/Retrieve':
+  '/document-directory/{document-directory-id}/document-verification-properties/{document-verification-properties-id}/retrieve':
       get:
         tags:
           - BQ (DDD Aggregate) - DocumentVerificationProperties
@@ -968,8 +968,8 @@ paths:
         description: (DDD  Service) Retrieve Document Verification Properties
         operationId: DocumentVerificationProperties/Retrieve
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
-          - $ref: '#/components/parameters/documentverificationpropertiesid'
+          - $ref: '#/components/parameters/document-directory-id'
+          - $ref: '#/components/parameters/document-verification-properties-id'
         responses:
           '200':
             $ref: >-
@@ -986,7 +986,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/DocumentVersionProperties/{documentversionpropertiesid}/Retrieve':
+  '/document-directory/{document-directory-id}/document-version-properties/{document-version-properties-id}/retrieve':
       get:
         tags:
           - BQ (DDD Aggregate) - DocumentVersionProperties
@@ -994,8 +994,8 @@ paths:
         description: (DDD  Service) Retrieve Document Version Properties
         operationId: DocumentVersionProperties/Retrieve
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
-          - $ref: '#/components/parameters/documentversionpropertiesid'
+          - $ref: '#/components/parameters/document-directory-id'
+          - $ref: '#/components/parameters/document-version-properties-id'
         responses:
           '200':
             $ref: '#/components/responses/RetrieveDocumentVersionPropertiesResponse'
@@ -1011,7 +1011,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/DocumentAmendmentProperties/{documentamendmentpropertiesid}/Update':
+  '/document-directory/{document-directory-id}/document-amendment-properties/{document-amendment-properties-id}/update':
       put:
         tags:
           - BQ (DDD Aggregate) - DocumentAmendmentProperties
@@ -1019,8 +1019,8 @@ paths:
         description: (DDD  Service) Update Document Amendment Properties
         operationId: DocumentAmendmentProperties/Update
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
-          - $ref: '#/components/parameters/documentamendmentpropertiesid'
+          - $ref: '#/components/parameters/document-directory-id'
+          - $ref: '#/components/parameters/document-amendment-properties-id'
         requestBody:
           $ref: '#/components/requestBodies/UpdateDocumentAmendmentPropertiesRequest'
         responses:
@@ -1038,7 +1038,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/DocumentArchivingProperties/{documentarchivingpropertiesid}/Update':
+  '/document-directory/{document-directory-id}/document-archiving-properties/{document-archiving-properties-id}/update':
       put:
         tags:
           - BQ (DDD Aggregate) - DocumentArchivingProperties
@@ -1046,8 +1046,8 @@ paths:
         description: (DDD  Service) Update Document Archiving Properties
         operationId: DocumentArchivingProperties/Update
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
-          - $ref: '#/components/parameters/documentarchivingpropertiesid'
+          - $ref: '#/components/parameters/document-directory-id'
+          - $ref: '#/components/parameters/document-archiving-properties-id'
         requestBody:
           $ref: '#/components/requestBodies/UpdateDocumentArchivingPropertiesRequest'
         responses:
@@ -1065,7 +1065,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/DocumentReferenceProperties/{documentreferencepropertiesid}/Update':
+  '/document-directory/{document-directory-id}/document-reference-properties/{document-reference-properties-id}/update':
       put:
         tags:
           - BQ (DDD Aggregate) - DocumentReferenceProperties
@@ -1073,8 +1073,8 @@ paths:
         description: (DDD  Service) Update Document Reference Properties
         operationId: DocumentReferenceProperties/Update
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
-          - $ref: '#/components/parameters/documentreferencepropertiesid'
+          - $ref: '#/components/parameters/document-directory-id'
+          - $ref: '#/components/parameters/document-reference-properties-id'
         requestBody:
           $ref: '#/components/requestBodies/UpdateDocumentReferencePropertiesRequest'
         responses:
@@ -1092,7 +1092,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/DocumentUpdateHistoryProperties/{documentupdatehistorypropertiesid}/Update':
+  '/document-directory/{document-directory-id}/document-update-history-properties/{document-update-history-properties-id}/update':
       put:
         tags:
           - BQ (DDD Aggregate) - DocumentUpdateHistoryProperties
@@ -1100,8 +1100,8 @@ paths:
         description: (DDD  Service) Update Document Update History Properties
         operationId: DocumentUpdateHistoryProperties/Update
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
-          - $ref: '#/components/parameters/documentupdatehistorypropertiesid'
+          - $ref: '#/components/parameters/document-directory-id'
+          - $ref: '#/components/parameters/document-update-history-properties-id'
         requestBody:
           $ref: >-
             #/components/requestBodies/UpdateDocumentUpdateHistoryPropertiesRequest
@@ -1121,7 +1121,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/DocumentVerificationProperties/{documentverificationpropertiesid}/Update':
+  '/document-directory/{document-directory-id}/document-verification-properties/{document-verification-properties-id}/update':
       put:
         tags:
           - BQ (DDD Aggregate) - DocumentVerificationProperties
@@ -1129,8 +1129,8 @@ paths:
         description: (DDD  Service) Update Document Verification Properties
         operationId: DocumentVerificationProperties/Update
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
-          - $ref: '#/components/parameters/documentverificationpropertiesid'
+          - $ref: '#/components/parameters/document-directory-id'
+          - $ref: '#/components/parameters/document-verification-properties-id'
         requestBody:
           $ref: >-
             #/components/requestBodies/UpdateDocumentVerificationPropertiesRequest
@@ -1150,7 +1150,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/DocumentDirectory/{documentdirectoryid}/DocumentVersionProperties/{documentversionpropertiesid}/Update':
+  '/document-directory/{document-directory-id}/document-version-properties/{document-version-properties-id}/update':
       put:
         tags:
           - BQ (DDD Aggregate) - DocumentVersionProperties
@@ -1158,8 +1158,8 @@ paths:
         description: (DDD  Service) Update Document Version Properties
         operationId: DocumentVersionProperties/Update
         parameters:
-          - $ref: '#/components/parameters/documentdirectoryid'
-          - $ref: '#/components/parameters/documentversionpropertiesid'
+          - $ref: '#/components/parameters/document-directory-id'
+          - $ref: '#/components/parameters/document-version-properties-id'
         requestBody:
           $ref: '#/components/requestBodies/UpdateDocumentVersionPropertiesRequest'
         responses:
@@ -14481,52 +14481,52 @@ components:
         content:
           'application/json:':
             schema:
-              $ref: '#/components/schemas/HTTPError'
+              $ref: '#/components/schemas/HTTPError'  
   parameters:
-    documentdirectoryid:
-        name: documentdirectoryid
+    document-directory-id:
+        name: document-directory-id
         in: path
         required: true
         style: simple
         schema:
           type: string
-    documentamendmentpropertiesid:
-        name: documentamendmentpropertiesid
+    document-amendment-properties-id:
+        name: document-amendment-properties-id
         in: path
         required: true
         style: simple
         schema:
           type: string
-    documentarchivingpropertiesid:
-        name: documentarchivingpropertiesid
+    document-archiving-properties-id:
+        name: document-archiving-properties-id
         in: path
         required: true
         style: simple
         schema:
           type: string
-    documentreferencepropertiesid:
-        name: documentreferencepropertiesid
+    document-reference-properties-id:
+        name: document-reference-properties-id
         in: path
         required: true
         style: simple
         schema:
           type: string
-    documentupdatehistorypropertiesid:
-        name: documentupdatehistorypropertiesid
+    document-update-history-properties-id:
+        name: document-update-history-properties-id
         in: path
         required: true
         style: simple
         schema:
           type: string
-    documentverificationpropertiesid:
-        name: documentverificationpropertiesid
+    document-verification-properties-id:
+        name: document-verification-properties-id
         in: path
         required: true
         style: simple
         schema:
           type: string
-    documentversionpropertiesid:
-        name: documentversionpropertiesid
+    document-version-properties-id:
+        name: document-version-properties-id
         in: path
         required: true
         style: simple
