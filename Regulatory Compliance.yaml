@@ -11,7 +11,7 @@ info:
 servers:
   - url: ' https://virtserver.swaggerhub.com/BIAN-3/RegulatoryCompliance/12.0.1'
 paths:
-  '/RegulatoryCompliance/Evaluate':
+  '/regulatory-compliance/evaluate':
       post:
         tags:
           - CR (DDD Aggregate) - RegulatoryComplianceAssessment
@@ -36,7 +36,7 @@ paths:
             $ref: '#/components/responses/TooManyRequests'
           '500':
             $ref: '#/components/responses/InternalServerError'
-  '/RegulatoryCompliance/{regulatorycomplianceid}/Request':
+  '/regulatory-compliance/{regulatory-compliance-id}/request':
       put:
         tags:
           - CR (DDD Aggregate) - RegulatoryComplianceAssessment
@@ -44,7 +44,7 @@ paths:
         description: (DDD  Service) Request a Review of a Regulatory Compliance
         operationId: RegulatoryComplianceAssessment/Request
         parameters:
-          - $ref: '#/components/parameters/regulatorycomplianceid'
+          - $ref: '#/components/parameters/regulatory-compliance-id'
         requestBody:
           $ref: >-
             #/components/requestBodies/RequestRegulatoryComplianceAssessmentRequest
@@ -62,8 +62,8 @@ paths:
           '429':
             $ref: '#/components/responses/TooManyRequests'
           '500':
-            $ref: '#/components/responses/InternalServerError'
-  '/RegulatoryCompliance/{regulatorycomplianceid}/Retrieve':
+            $ref: '#/components/responses/InternalServerError'  
+  '/regulatory-compliance/{regulatory-compliance-id}/retrieve':
       get:
         tags:
           - CR (DDD Aggregate) - RegulatoryComplianceAssessment
@@ -71,7 +71,7 @@ paths:
         description: (DDD  Service) Retrieve Details about a Regulatory Compliance
         operationId: RegulatoryComplianceAssessment/Retrieve
         parameters:
-          - $ref: '#/components/parameters/regulatorycomplianceid'
+          - $ref: '#/components/parameters/regulatory-compliance-id'
         responses:
           '200':
             $ref: >-
@@ -87,8 +87,8 @@ paths:
           '429':
             $ref: '#/components/responses/TooManyRequests'
           '500':
-            $ref: '#/components/responses/InternalServerError'
-  '/RegulatoryCompliance/{regulatorycomplianceid}/Update':
+            $ref: '#/components/responses/InternalServerError'  
+  '/regulatory-compliance/{regulatory-compliance-id}/update':
       put:
         tags:
           - CR (DDD Aggregate) - RegulatoryComplianceAssessment
@@ -96,7 +96,7 @@ paths:
         description: (DDD  Service) Update Details of a Regulatory Compliance
         operationId: RegulatoryComplianceAssessment/Update
         parameters:
-          - $ref: '#/components/parameters/regulatorycomplianceid'
+          - $ref: '#/components/parameters/regulatory-compliance-id'
         requestBody:
           $ref: >-
             #/components/requestBodies/UpdateRegulatoryComplianceAssessmentRequest
@@ -114,8 +114,8 @@ paths:
           '429':
             $ref: '#/components/responses/TooManyRequests'
           '500':
-            $ref: '#/components/responses/InternalServerError'
-  '/RegulatoryCompliance/{regulatorycomplianceid}/Capture':
+            $ref: '#/components/responses/InternalServerError'  
+  '/regulatory-compliance/{regulatory-compliance-id}/capture':
       put:
         tags:
           - CR (DDD Aggregate) - RegulatoryComplianceAssessment
@@ -123,7 +123,7 @@ paths:
         description: (DDD  Service) Capture Regulatory Requirement
         operationId: RegulatoryComplianceAssessment/Capture
         parameters:
-          - $ref: '#/components/parameters/regulatorycomplianceid'
+          - $ref: '#/components/parameters/regulatory-compliance-id'
         requestBody:
           $ref: >-
             #/components/requestBodies/CaptureRegulatoryComplianceAssessmentRequest
@@ -2719,10 +2719,10 @@ components:
         content:
           'application/json:':
             schema:
-              $ref: '#/components/schemas/HTTPError'
+              $ref: '#/components/schemas/HTTPError'  
   parameters:
-    regulatorycomplianceid:
-        name: regulatorycomplianceid
+    regulatory-compliance-id:
+        name: regulatory-compliance-id
         in: path
         required: true
         style: simple
