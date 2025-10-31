@@ -9,7 +9,7 @@ info:
 servers:
   - url: https://virtserver.swaggerhub.com/B154/BIAN/CustomerPosition/13.0.0
 paths:
-  /CustomerPosition/Initiate:
+  /customer-position/initiate:
     post:
       tags:
         - CR - CustomerPositionState
@@ -33,7 +33,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/CustomerPosition/{customerpositionid}/Update':
+  '/customer-position/{customer-position-id}/update':
     put:
       tags:
         - CR - CustomerPositionState
@@ -41,7 +41,7 @@ paths:
       description: UpCR Update the settings for customer position tracking
       operationId: Update
       parameters:
-        - $ref: '#/components/parameters/customerpositionid'
+        - $ref: '#/components/parameters/customer-position-id'
       requestBody:
         $ref: '#/components/requestBodies/CustomerPositionState'
       responses:
@@ -59,7 +59,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/CustomerPosition/{customerpositionid}/Control':
+  '/customer-position/{customer-position-id}/control':
     put:
       tags:
         - CR - CustomerPositionState
@@ -67,7 +67,7 @@ paths:
       description: CoCR Control the customer position tracking (e.g. suspend)
       operationId: Control
       parameters:
-        - $ref: '#/components/parameters/customerpositionid'
+        - $ref: '#/components/parameters/customer-position-id'
       requestBody:
         $ref: '#/components/requestBodies/CustomerPositionState'
       responses:
@@ -85,7 +85,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/CustomerPosition/{customerpositionid}/Execute':
+  '/customer-position/{customer-position-id}/execute':
     put:
       tags:
         - CR - CustomerPositionState
@@ -93,7 +93,7 @@ paths:
       description: ExCR Execute an automated task for position tracking (e.g. issue an alert)
       operationId: Execute
       parameters:
-        - $ref: '#/components/parameters/customerpositionid'
+        - $ref: '#/components/parameters/customer-position-id'
       requestBody:
         $ref: '#/components/requestBodies/CustomerPositionState'
       responses:
@@ -111,7 +111,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/CustomerPosition/{customerpositionid}/Request':
+  '/customer-position/{customer-position-id}/request':
     put:
       tags:
         - CR - CustomerPositionState
@@ -119,7 +119,7 @@ paths:
       description: RqCR Request an action for customer position monitoring (e.g. review and refresh content)
       operationId: Request
       parameters:
-        - $ref: '#/components/parameters/customerpositionid'
+        - $ref: '#/components/parameters/customer-position-id'
       requestBody:
         $ref: '#/components/requestBodies/CustomerPositionState'
       responses:
@@ -137,7 +137,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/CustomerPosition/{customerpositionid}/Retrieve':
+  '/customer-position/{customer-position-id}/retrieve':
     get:
       tags:
         - CR - CustomerPositionState
@@ -145,7 +145,7 @@ paths:
       description: ReCR Retrieve details about a customer position
       operationId: Retrieve
       parameters:
-        - $ref: '#/components/parameters/customerpositionid'
+        - $ref: '#/components/parameters/customer-position-id'
       responses:
         '200':
           $ref: '#/components/responses/CustomerPositionState'
@@ -161,7 +161,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/CustomerPosition/{customerpositionid}/Cashflow/{cashflowid}/Exchange':
+  '/customer-position/{customer-position-id}/cashflow/{cashflow-id}/exchange':
     put:
       tags:
         - BQ - Cashflow
@@ -169,8 +169,8 @@ paths:
       description: EcBQ Accept or verify the presented cash flow position
       operationId: ExchangeCashflow
       parameters:
-        - $ref: '#/components/parameters/customerpositionid'
-        - $ref: '#/components/parameters/cashflowid'
+        - $ref: '#/components/parameters/customer-position-id'
+        - $ref: '#/components/parameters/cashflow-id'
       requestBody:
         $ref: '#/components/requestBodies/Cashflow'
       responses:
@@ -188,7 +188,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/CustomerPosition/{customerpositionid}/Cashflow/{cashflowid}/Capture':
+  '/customer-position/{customer-position-id}/cashflow/{cashflow-id}/capture':
     put:
       tags:
         - BQ - Cashflow
@@ -196,8 +196,8 @@ paths:
       description: CaBQ Capture product transaction reports (push from fulfillment)
       operationId: CaptureCashflow
       parameters:
-        - $ref: '#/components/parameters/customerpositionid'
-        - $ref: '#/components/parameters/cashflowid'
+        - $ref: '#/components/parameters/customer-position-id'
+        - $ref: '#/components/parameters/cashflow-id'
       requestBody:
         $ref: '#/components/requestBodies/Cashflow'
       responses:
@@ -215,7 +215,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/CustomerPosition/{customerpositionid}/Cashflow/{cashflowid}/Retrieve':
+  '/customer-position/{customer-position-id}/cashflow/{cashflow-id}/retrieve':
     get:
       tags:
         - BQ - Cashflow
@@ -223,8 +223,8 @@ paths:
       description: ReBQ retrieve details about a cash flow analysis as part of the customer position
       operationId: RetrieveCashflow
       parameters:
-        - $ref: '#/components/parameters/customerpositionid'
-        - $ref: '#/components/parameters/cashflowid'
+        - $ref: '#/components/parameters/customer-position-id'
+        - $ref: '#/components/parameters/cashflow-id'
       responses:
         '200':
           $ref: '#/components/responses/Cashflow'
@@ -240,7 +240,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/CustomerPosition/{customerpositionid}/Credit/{creditid}/Exchange':
+  '/customer-position/{customer-position-id}/credit/{credit-id}/exchange':
     put:
       tags:
         - BQ - Credit
@@ -248,8 +248,8 @@ paths:
       description: EcBQ Accept or verify the presented credit position
       operationId: ExchangeCredit
       parameters:
-        - $ref: '#/components/parameters/customerpositionid'
-        - $ref: '#/components/parameters/creditid'
+        - $ref: '#/components/parameters/customer-position-id'
+        - $ref: '#/components/parameters/credit-id'
       requestBody:
         $ref: '#/components/requestBodies/Credit'
       responses:
@@ -267,7 +267,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/CustomerPosition/{customerpositionid}/Credit/{creditid}/Capture':
+  '/customer-position/{customer-position-id}/credit/{credit-id}/capture':
     put:
       tags:
         - BQ - Credit
@@ -275,8 +275,8 @@ paths:
       description: CaBQ Capture credit assessment reports (push from credit administration)
       operationId: CaptureCredit
       parameters:
-        - $ref: '#/components/parameters/customerpositionid'
-        - $ref: '#/components/parameters/creditid'
+        - $ref: '#/components/parameters/customer-position-id'
+        - $ref: '#/components/parameters/credit-id'
       requestBody:
         $ref: '#/components/requestBodies/Credit'
       responses:
@@ -294,7 +294,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/CustomerPosition/{customerpositionid}/Credit/{creditid}/Retrieve':
+  '/customer-position/{customer-position-id}/credit/{credit-id}/retrieve':
     get:
       tags:
         - BQ - Credit
@@ -302,8 +302,8 @@ paths:
       description: ReBQ retrieve details about a credit analysis as part of the customer position
       operationId: RetrieveCredit
       parameters:
-        - $ref: '#/components/parameters/customerpositionid'
-        - $ref: '#/components/parameters/creditid'
+        - $ref: '#/components/parameters/customer-position-id'
+        - $ref: '#/components/parameters/credit-id'
       responses:
         '200':
           $ref: '#/components/responses/Credit'
@@ -319,7 +319,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/CustomerPosition/{customerpositionid}/Collateral/{collateralid}/Exchange':
+  '/customer-position/{customer-position-id}/collateral/{collateral-id}/exchange':
     put:
       tags:
         - BQ - Collateral
@@ -327,8 +327,8 @@ paths:
       description: EcBQ Accept or verify the presented collateral position
       operationId: ExchangeCollateral
       parameters:
-        - $ref: '#/components/parameters/customerpositionid'
-        - $ref: '#/components/parameters/collateralid'
+        - $ref: '#/components/parameters/customer-position-id'
+        - $ref: '#/components/parameters/collateral-id'
       requestBody:
         $ref: '#/components/requestBodies/Collateral'
       responses:
@@ -346,7 +346,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/CustomerPosition/{customerpositionid}/Collateral/{collateralid}/Capture':
+  '/customer-position/{customer-position-id}/collateral/{collateral-id}/capture':
     put:
       tags:
         - BQ - Collateral
@@ -354,8 +354,8 @@ paths:
       description: CaBQ Capture collateral allocation reports (push from collateral allocation management)
       operationId: CaptureCollateral
       parameters:
-        - $ref: '#/components/parameters/customerpositionid'
-        - $ref: '#/components/parameters/collateralid'
+        - $ref: '#/components/parameters/customer-position-id'
+        - $ref: '#/components/parameters/collateral-id'
       requestBody:
         $ref: '#/components/requestBodies/Collateral'
       responses:
@@ -373,7 +373,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/CustomerPosition/{customerpositionid}/Collateral/{collateralid}/Retrieve':
+  '/customer-position/{customer-position-id}/collateral/{collateral-id}/retrieve':
     get:
       tags:
         - BQ - Collateral
@@ -381,8 +381,8 @@ paths:
       description: ReBQ retrieve details about a collateral allocation as part of the customer position
       operationId: RetrieveCollateral
       parameters:
-        - $ref: '#/components/parameters/customerpositionid'
-        - $ref: '#/components/parameters/collateralid'
+        - $ref: '#/components/parameters/customer-position-id'
+        - $ref: '#/components/parameters/collateral-id'
       responses:
         '200':
           $ref: '#/components/responses/Collateral'
@@ -398,7 +398,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/CustomerPosition/{customerpositionid}/Cashflow/Evaluate':
+  '/customer-position/{customer-position-id}/cashflow/evaluate':
     post:
       tags:
         - BQ - Cashflow
@@ -406,7 +406,7 @@ paths:
       description: Setup transaction history
       operationId: EvaluateCashflow
       parameters:
-        - $ref: '#/components/parameters/customerpositionid'
+        - $ref: '#/components/parameters/customer-position-id'
       requestBody:
         $ref: '#/components/requestBodies/Cashflow'
       responses:
@@ -424,7 +424,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/CustomerPosition/{customerpositionid}/Cashflow/{cashflowid}/Notify':
+  '/customer-position/{customer-position-id}/cashflow/{cashflow-id}/notify':
     get:
       tags:
         - BQ - Cashflow
@@ -432,8 +432,8 @@ paths:
       description: Notify details about a cash flow analysis as part of the customer position
       operationId: NotifyCashflow
       parameters:
-        - $ref: '#/components/parameters/customerpositionid'
-        - $ref: '#/components/parameters/cashflowid'
+        - $ref: '#/components/parameters/customer-position-id'
+        - $ref: '#/components/parameters/cashflow-id'
       responses:
         '200':
           $ref: '#/components/responses/Cashflow'
@@ -449,7 +449,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/CustomerPosition/{customerpositionid}/Credit/{creditid}/Notify':
+  '/customer-position/{customer-position-id}/credit/{credit-id}/notify':
     get:
       tags:
         - BQ - Credit
@@ -457,8 +457,8 @@ paths:
       description: Notify Credit
       operationId: NotifyCredit
       parameters:
-        - $ref: '#/components/parameters/customerpositionid'
-        - $ref: '#/components/parameters/creditid'
+        - $ref: '#/components/parameters/customer-position-id'
+        - $ref: '#/components/parameters/credit-id'
       responses:
         '200':
           $ref: '#/components/responses/Credit'
@@ -474,7 +474,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/CustomerPosition/{customerpositionid}/Credit/Evaluate':
+  '/customer-position/{customer-position-id}/credit/evaluate':
     post:
       tags:
         - BQ - Credit
@@ -482,7 +482,7 @@ paths:
       description: Evaluate Credit
       operationId: EvaluateCredit
       parameters:
-        - $ref: '#/components/parameters/customerpositionid'
+        - $ref: '#/components/parameters/customer-position-id'
       requestBody:
         $ref: '#/components/requestBodies/Credit'
       responses:
@@ -1226,29 +1226,29 @@ components:
           schema:
             $ref: '#/components/schemas/Collateral'
   parameters:
-    customerpositionid:
-      name: customerpositionid
+    customer-position-id:
+      name: customer-position-id
       in: path
       required: true
       style: simple
       schema:
         type: string
-    cashflowid:
-      name: cashflowid
+    cashflow-id:
+      name: cashflow-id
       in: path
       required: true
       style: simple
       schema:
         type: string
-    creditid:
-      name: creditid
+    credit-id:
+      name: credit-id
       in: path
       required: true
       style: simple
       schema:
         type: string
-    collateralid:
-      name: collateralid
+    collateral-id:
+      name: collateral-id
       in: path
       required: true
       style: simple
