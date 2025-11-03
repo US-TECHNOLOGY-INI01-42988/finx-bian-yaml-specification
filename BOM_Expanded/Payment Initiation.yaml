@@ -9,7 +9,7 @@ info:
 servers:
   - url: https://virtserver.swaggerhub.com/B154/BIAN/PaymentInitiation/13.0.0
 paths:
-  /PaymentInitiation/Initiate:
+  /payment-initiation/initiate:
     post:
       tags:
         - CR - PaymentInitiationTransaction
@@ -33,7 +33,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/PaymentInitiation/{paymentinitiationid}/Update':
+  '/payment-initiation/{payment-initiation-id}/update':
     put:
       tags:
         - CR - PaymentInitiationTransaction
@@ -41,7 +41,7 @@ paths:
       description: UpCR Update details of a payment transaction instruction
       operationId: Update
       parameters:
-        - $ref: '#/components/parameters/paymentinitiationid'
+        - $ref: '#/components/parameters/payment-initiation-id'
       requestBody:
         $ref: '#/components/requestBodies/PaymentInitiationTransaction'
       responses:
@@ -59,7 +59,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/PaymentInitiation/{paymentinitiationid}/Retrieve':
+  '/payment-initiation/{payment-initiation-id}/retrieve':
     get:
       tags:
         - CR - PaymentInitiationTransaction
@@ -67,7 +67,7 @@ paths:
       description: ReCR Retrieve details about a payment transaction
       operationId: Retrieve
       parameters:
-        - $ref: '#/components/parameters/paymentinitiationid'
+        - $ref: '#/components/parameters/payment-initiation-id'
       responses:
         '200':
           $ref: '#/components/responses/PaymentInitiationTransaction'
@@ -83,7 +83,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/PaymentInitiation/{paymentinitiationid}/Compliance/{complianceid}/Retrieve':
+  '/payment-initiation/{payment-initiation-id}/compliance/{compliance-id}/retrieve':
     get:
       tags:
         - BQ - Compliance
@@ -91,8 +91,8 @@ paths:
       description: ReBQ Retrieve details about a payment transaction compliance check
       operationId: RetrieveCompliance
       parameters:
-        - $ref: '#/components/parameters/paymentinitiationid'
-        - $ref: '#/components/parameters/complianceid'
+        - $ref: '#/components/parameters/payment-initiation-id'
+        - $ref: '#/components/parameters/compliance-id'
       responses:
         '200':
           $ref: '#/components/responses/Compliance'
@@ -108,7 +108,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/PaymentInitiation/{paymentinitiationid}/FundingCheck/{fundingcheckid}/Retrieve':
+  '/payment-initiation/{payment-initiation-id}/funding-check/{funding-check-id}/retrieve':
     get:
       tags:
         - BQ - FundingCheck
@@ -116,8 +116,8 @@ paths:
       description: ReBQ Retrieve details about a payment transaction funds available
       operationId: RetrieveFundingCheck
       parameters:
-        - $ref: '#/components/parameters/paymentinitiationid'
-        - $ref: '#/components/parameters/fundingcheckid'
+        - $ref: '#/components/parameters/payment-initiation-id'
+        - $ref: '#/components/parameters/funding-check-id'
       responses:
         '200':
           $ref: '#/components/responses/FundingCheck'
@@ -133,7 +133,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/PaymentInitiation/{paymentinitiationid}/OrderInitiation/{orderinitiationid}/Exchange':
+  '/payment-initiation/{payment-initiation-id}/order-initiation/{order-initiation-id}/exchange':
     put:
       tags:
         - BQ - OrderInitiation
@@ -141,8 +141,8 @@ paths:
       description: EcBQ Verify or accept the payment transaction (results in a payment order)
       operationId: ExchangeOrderInitiation
       parameters:
-        - $ref: '#/components/parameters/paymentinitiationid'
-        - $ref: '#/components/parameters/orderinitiationid'
+        - $ref: '#/components/parameters/payment-initiation-id'
+        - $ref: '#/components/parameters/order-initiation-id'
       requestBody:
         $ref: '#/components/requestBodies/OrderInitiation'
       responses:
@@ -160,7 +160,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/PaymentInitiation/{paymentinitiationid}/OrderInitiation/{orderinitiationid}/Retrieve':
+  '/payment-initiation/{payment-initiation-id}/order-initiation/{order-initiation-id}/retrieve':
     get:
       tags:
         - BQ - OrderInitiation
@@ -168,8 +168,8 @@ paths:
       description: ReBQ Retrieve details about the payment order initiation
       operationId: RetrieveOrderInitiation
       parameters:
-        - $ref: '#/components/parameters/paymentinitiationid'
-        - $ref: '#/components/parameters/orderinitiationid'
+        - $ref: '#/components/parameters/payment-initiation-id'
+        - $ref: '#/components/parameters/order-initiation-id'
       responses:
         '200':
           $ref: '#/components/responses/OrderInitiation'
@@ -1265,29 +1265,29 @@ components:
           schema:
             $ref: '#/components/schemas/OrderInitiation'
   parameters:
-    paymentinitiationid:
-      name: paymentinitiationid
+    payment-initiation-id:
+      name: payment-initiation-id
       in: path
       required: true
       style: simple
       schema:
         type: string
-    complianceid:
-      name: complianceid
+    compliance-id:
+      name: compliance-id
       in: path
       required: true
       style: simple
       schema:
         type: string
-    fundingcheckid:
-      name: fundingcheckid
+    funding-check-id:
+      name: funding-check-id
       in: path
       required: true
       style: simple
       schema:
         type: string
-    orderinitiationid:
-      name: orderinitiationid
+    order-initiation-id:
+      name: order-initiation-id
       in: path
       required: true
       style: simple

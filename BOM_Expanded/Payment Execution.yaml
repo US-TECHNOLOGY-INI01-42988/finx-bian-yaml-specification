@@ -9,7 +9,7 @@ info:
 servers:
   - url: https://virtserver.swaggerhub.com/B154/BIAN/PaymentExecution/13.0.0
 paths:
-  /PaymentExecution/Initiate:
+  /payment-execution/initiate:
     post:
       tags:
         - CR - PaymentExecutionProcedure
@@ -33,7 +33,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/PaymentExecution/{paymentexecutionid}/Update':
+  '/payment-execution/{payment-execution-id}/update':
     put:
       tags:
         - CR - PaymentExecutionProcedure
@@ -41,7 +41,7 @@ paths:
       description: UpCR Update details of a payment execution instruction
       operationId: Update
       parameters:
-        - $ref: '#/components/parameters/paymentexecutionid'
+        - $ref: '#/components/parameters/payment-execution-id'
       requestBody:
         $ref: '#/components/requestBodies/PaymentExecutionProcedure'
       responses:
@@ -59,7 +59,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/PaymentExecution/{paymentexecutionid}/Retrieve':
+  '/payment-execution/{payment-execution-id}/retrieve':
     get:
       tags:
         - CR - PaymentExecutionProcedure
@@ -67,7 +67,7 @@ paths:
       description: ReCR Retrieve details about a payment execution instruction
       operationId: Retrieve
       parameters:
-        - $ref: '#/components/parameters/paymentexecutionid'
+        - $ref: '#/components/parameters/payment-execution-id'
       responses:
         '200':
           $ref: '#/components/responses/PaymentExecutionProcedure'
@@ -83,7 +83,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/PaymentExecution/{paymentexecutionid}/PaymentMechanism/{paymentmechanismid}/Retrieve':
+  '/payment-execution/{payment-execution-id}/payment-mechanism/{payment-mechanism-id}/retrieve':
     get:
       tags:
         - BQ - PaymentMechanism
@@ -91,8 +91,8 @@ paths:
       description: ReBQ Retrieve details about the payment mechanism selection
       operationId: RetrievePaymentMechanism
       parameters:
-        - $ref: '#/components/parameters/paymentexecutionid'
-        - $ref: '#/components/parameters/paymentmechanismid'
+        - $ref: '#/components/parameters/payment-execution-id'
+        - $ref: '#/components/parameters/payment-mechanism-id'
       responses:
         '200':
           $ref: '#/components/responses/PaymentMechanism'
@@ -108,7 +108,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/PaymentExecution/{paymentexecutionid}/PaymentExecution/{paymentexecutionid}/Control':
+  '/payment-execution/{payment-execution-id}/payment-execution/{payment-execution-id}/control':
     put:
       tags:
         - BQ - PaymentExecution
@@ -116,7 +116,7 @@ paths:
       description: CoBQ Control the execution of the gateway transaction
       operationId: ControlPaymentExecution
       parameters:
-        - $ref: '#/components/parameters/paymentexecutionid'
+        - $ref: '#/components/parameters/payment-execution-id'
       requestBody:
         $ref: '#/components/requestBodies/PaymentExecution'
       responses:
@@ -134,7 +134,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/PaymentExecution/{paymentexecutionid}/PaymentExecution/{paymentexecutionid}/Retrieve':
+  '/payment-execution/{payment-execution-id}/payment-execution/{payment-execution-id}/retrieve':
     get:
       tags:
         - BQ - PaymentExecution
@@ -142,7 +142,7 @@ paths:
       description: ReBQ Retrieve details about the gateway transaction
       operationId: RetrievePaymentExecution
       parameters:
-        - $ref: '#/components/parameters/paymentexecutionid'
+        - $ref: '#/components/parameters/payment-execution-id'
       responses:
         '200':
           $ref: '#/components/responses/PaymentExecution'
@@ -1253,15 +1253,15 @@ components:
           schema:
             $ref: '#/components/schemas/PaymentExecution'
   parameters:
-    paymentexecutionid:
-      name: paymentexecutionid
+    payment-execution-id:
+      name: payment-execution-id
       in: path
       required: true
       style: simple
       schema:
         type: string
-    paymentmechanismid:
-      name: paymentmechanismid
+    payment-mechanism-id:
+      name: payment-mechanism-id
       in: path
       required: true
       style: simple

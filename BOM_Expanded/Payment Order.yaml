@@ -9,7 +9,7 @@ info:
 servers:
   - url: https://virtserver.swaggerhub.com/B154/BIAN/PaymentOrder/13.0.0
 paths:
-  /PaymentOrder/Initiate:
+  /payment-order/initiate:
     post:
       tags:
         - CR - PaymentOrderProcedure
@@ -33,7 +33,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/PaymentOrder/{paymentorderid}/Update':
+  '/payment-order/{payment-order-id}/update':
     put:
       tags:
         - CR - PaymentOrderProcedure
@@ -41,7 +41,7 @@ paths:
       description: UpCR Update details of a payment order instruction
       operationId: Update
       parameters:
-        - $ref: '#/components/parameters/paymentorderid'
+        - $ref: '#/components/parameters/payment-order-id'
       requestBody:
         $ref: '#/components/requestBodies/PaymentOrderProcedure'
       responses:
@@ -59,7 +59,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/PaymentOrder/{paymentorderid}/Retrieve':
+  '/payment-order/{payment-order-id}/retrieve':
     get:
       tags:
         - CR - PaymentOrderProcedure
@@ -67,7 +67,7 @@ paths:
       description: ReCR Retrieve details about a payment order instruction
       operationId: Retrieve
       parameters:
-        - $ref: '#/components/parameters/paymentorderid'
+        - $ref: '#/components/parameters/payment-order-id'
       responses:
         '200':
           $ref: '#/components/responses/PaymentOrderProcedure'
@@ -83,7 +83,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/PaymentOrder/{paymentorderid}/OrderConfirmation/{orderconfirmationid}/Retrieve':
+  '/payment-order/{payment-order-id}/order-confirmation/{order-confirmation-id}/retrieve':
     get:
       tags:
         - BQ - OrderConfirmation
@@ -91,8 +91,8 @@ paths:
       description: ReBQ Retrieve details about a payment order confirmation process
       operationId: RetrieveOrderConfirmation
       parameters:
-        - $ref: '#/components/parameters/paymentorderid'
-        - $ref: '#/components/parameters/orderconfirmationid'
+        - $ref: '#/components/parameters/payment-order-id'
+        - $ref: '#/components/parameters/order-confirmation-id'
       responses:
         '200':
           $ref: '#/components/responses/OrderConfirmation'
@@ -108,7 +108,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/PaymentOrder/{paymentorderid}/ExecutionInitiation/{executioninitiationid}/Control':
+  '/payment-order/{payment-order-id}/execution-initiation/{execution-initiation-id}/control':
     put:
       tags:
         - BQ - ExecutionInitiation
@@ -116,8 +116,8 @@ paths:
       description: CoBQ Control the payment execution processing
       operationId: ControlExecutionInitiation
       parameters:
-        - $ref: '#/components/parameters/paymentorderid'
-        - $ref: '#/components/parameters/executioninitiationid'
+        - $ref: '#/components/parameters/payment-order-id'
+        - $ref: '#/components/parameters/execution-initiation-id'
       requestBody:
         $ref: '#/components/requestBodies/ExecutionInitiation'
       responses:
@@ -135,7 +135,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/PaymentOrder/{paymentorderid}/ExecutionInitiation/{executioninitiationid}/Retrieve':
+  '/payment-order/{payment-order-id}/execution-initiation/{execution-initiation-id}/retrieve':
     get:
       tags:
         - BQ - ExecutionInitiation
@@ -143,8 +143,8 @@ paths:
       description: ReBQ Retrieve details about the payment execution processing
       operationId: RetrieveExecutionInitiation
       parameters:
-        - $ref: '#/components/parameters/paymentorderid'
-        - $ref: '#/components/parameters/executioninitiationid'
+        - $ref: '#/components/parameters/payment-order-id'
+        - $ref: '#/components/parameters/execution-initiation-id'
       responses:
         '200':
           $ref: '#/components/responses/ExecutionInitiation'
@@ -1315,22 +1315,22 @@ components:
           schema:
             $ref: '#/components/schemas/ExecutionInitiation'
   parameters:
-    paymentorderid:
-      name: paymentorderid
+    payment-order-id:
+      name: payment-order-id
       in: path
       required: true
       style: simple
       schema:
         type: string
-    orderconfirmationid:
-      name: orderconfirmationid
+    order-confirmation-id:
+      name: order-confirmation-id
       in: path
       required: true
       style: simple
       schema:
         type: string
-    executioninitiationid:
-      name: executioninitiationid
+    execution-initiation-id:
+      name: execution-initiation-id
       in: path
       required: true
       style: simple

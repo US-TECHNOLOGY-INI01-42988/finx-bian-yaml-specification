@@ -9,7 +9,7 @@ info:
 servers:
   - url: https://virtserver.swaggerhub.com/B154/BIAN/InternalBankAccount/13.0.0
 paths:
-  '/InternalBankAccount/{internalbankaccountid}/Capture':
+  '/internal-bank-account/{internal-bank-account-id}/capture':
     put:
       tags:
         - CR - InternalBankAccountFacility
@@ -17,7 +17,7 @@ paths:
       description: Capture Internal Bank Account Facility
       operationId: Capture
       parameters:
-        - $ref: '#/components/parameters/internalbankaccountid'
+        - $ref: '#/components/parameters/internal-bank-account-id'
       requestBody:
         $ref: '#/components/requestBodies/InternalBankAccountFacility'
       responses:
@@ -35,7 +35,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/InternalBankAccount/{internalbankaccountid}/Control':
+  '/internal-bank-account/{internal-bank-account-id}/control':
     put:
       tags:
         - CR - InternalBankAccountFacility
@@ -43,7 +43,7 @@ paths:
       description: Control Internal Bank Account Facility
       operationId: Control
       parameters:
-        - $ref: '#/components/parameters/internalbankaccountid'
+        - $ref: '#/components/parameters/internal-bank-account-id'
       requestBody:
         $ref: '#/components/requestBodies/InternalBankAccountFacility'
       responses:
@@ -61,7 +61,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/InternalBankAccount/{internalbankaccountid}/Notify':
+  '/internal-bank-account/{internal-bank-account-id}/notify':
     get:
       tags:
         - CR - InternalBankAccountFacility
@@ -69,7 +69,7 @@ paths:
       description: Notify Internal Bank Account Facility
       operationId: Notify
       parameters:
-        - $ref: '#/components/parameters/internalbankaccountid'
+        - $ref: '#/components/parameters/internal-bank-account-id'
       responses:
         '200':
           $ref: '#/components/responses/InternalBankAccountFacility'
@@ -85,7 +85,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  /InternalBankAccount/Initiate:
+  /internal-bank-account/initiate:
     post:
       tags:
         - CR - InternalBankAccountFacility
@@ -109,7 +109,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/InternalBankAccount/{internalbankaccountid}/Update':
+  '/internal-bank-account/{internal-bank-account-id}/update':
     put:
       tags:
         - CR - InternalBankAccountFacility
@@ -117,7 +117,7 @@ paths:
       description: Update Internal Bank Account Facility
       operationId: Update
       parameters:
-        - $ref: '#/components/parameters/internalbankaccountid'
+        - $ref: '#/components/parameters/internal-bank-account-id'
       requestBody:
         $ref: '#/components/requestBodies/InternalBankAccountFacility'
       responses:
@@ -135,7 +135,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/InternalBankAccount/{internalbankaccountid}/Retrieve':
+  '/internal-bank-account/{internal-bank-account-id}/retrieve':
     get:
       tags:
         - CR - InternalBankAccountFacility
@@ -143,7 +143,7 @@ paths:
       description: Retrieve Internal Bank Account Facility
       operationId: Retrieve
       parameters:
-        - $ref: '#/components/parameters/internalbankaccountid'
+        - $ref: '#/components/parameters/internal-bank-account-id'
       responses:
         '200':
           $ref: '#/components/responses/InternalBankAccountFacility'
@@ -159,7 +159,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/InternalBankAccount/{internalbankaccountid}/BookingAuthorization/{bookingauthorizationid}/Execute':
+  '/internal-bank-account/{internal-bank-account-id}/booking-authorization/{booking-authorization-id}/execute':
     put:
       tags:
         - BQ - BookingAuthorization
@@ -167,8 +167,8 @@ paths:
       description: Execute Authorization of Booking
       operationId: ExecuteBookingAuthorization
       parameters:
-        - $ref: '#/components/parameters/internalbankaccountid'
-        - $ref: '#/components/parameters/bookingauthorizationid'
+        - $ref: '#/components/parameters/internal-bank-account-id'
+        - $ref: '#/components/parameters/booking-authorization-id'
       requestBody:
         $ref: '#/components/requestBodies/BookingAuthorization'
       responses:
@@ -1000,15 +1000,15 @@ components:
           schema:
             $ref: '#/components/schemas/BookingAuthorization'
   parameters:
-    internalbankaccountid:
-      name: internalbankaccountid
+    internal-bank-account-id:
+      name: internal-bank-account-id
       in: path
       required: true
       style: simple
       schema:
         type: string
-    bookingauthorizationid:
-      name: bookingauthorizationid
+    booking-authorization-id:
+      name: booking-authorization-id
       in: path
       required: true
       style: simple

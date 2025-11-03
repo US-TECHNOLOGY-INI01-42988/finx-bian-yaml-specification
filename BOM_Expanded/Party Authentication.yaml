@@ -9,7 +9,7 @@ info:
 servers:
   - url: https://virtserver.swaggerhub.com/B154/BIAN/PartyAuthentication/13.0.0
 paths:
-  /PartyAuthentication/Evaluate:
+  /party-authentication/evaluate:
     post:
       tags:
         - CR - PartyAuthenticationAssessment
@@ -33,7 +33,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/PartyAuthentication/{partyauthenticationid}/Update':
+  '/party-authentication/{party-authentication-id}/update':
     put:
       tags:
         - CR - PartyAuthenticationAssessment
@@ -41,7 +41,7 @@ paths:
       description: UpCR Update details of a customer authentication assessment
       operationId: Update
       parameters:
-        - $ref: '#/components/parameters/partyauthenticationid'
+        - $ref: '#/components/parameters/party-authentication-id'
       requestBody:
         $ref: '#/components/requestBodies/PartyAuthenticationAssessment'
       responses:
@@ -59,7 +59,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/PartyAuthentication/{partyauthenticationid}/Exchange':
+  '/party-authentication/{party-authentication-id}/exchange':
     put:
       tags:
         - CR - PartyAuthenticationAssessment
@@ -67,7 +67,7 @@ paths:
       description: 'EcCR Accept, reject, etc. a customer authentication assessment'
       operationId: Exchange
       parameters:
-        - $ref: '#/components/parameters/partyauthenticationid'
+        - $ref: '#/components/parameters/party-authentication-id'
       requestBody:
         $ref: '#/components/requestBodies/PartyAuthenticationAssessment'
       responses:
@@ -85,7 +85,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/PartyAuthentication/{partyauthenticationid}/Execute':
+  '/party-authentication/{party-authentication-id}/execute':
     put:
       tags:
         - CR - PartyAuthenticationAssessment
@@ -93,7 +93,7 @@ paths:
       description: ExCR Execute an automated action for an assessment (e.g. submit data)
       operationId: Execute
       parameters:
-        - $ref: '#/components/parameters/partyauthenticationid'
+        - $ref: '#/components/parameters/party-authentication-id'
       requestBody:
         $ref: '#/components/requestBodies/PartyAuthenticationAssessment'
       responses:
@@ -111,7 +111,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/PartyAuthentication/{partyauthenticationid}/Request':
+  '/party-authentication/{party-authentication-id}/request':
     put:
       tags:
         - CR - PartyAuthenticationAssessment
@@ -119,7 +119,7 @@ paths:
       description: RqCR Request manual interventions in an assessment (e.g. engage specialist)
       operationId: Request
       parameters:
-        - $ref: '#/components/parameters/partyauthenticationid'
+        - $ref: '#/components/parameters/party-authentication-id'
       requestBody:
         $ref: '#/components/requestBodies/PartyAuthenticationAssessment'
       responses:
@@ -137,7 +137,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/PartyAuthentication/{partyauthenticationid}/Grant':
+  '/party-authentication/{party-authentication-id}/grant':
     put:
       tags:
         - CR - PartyAuthenticationAssessment
@@ -145,7 +145,7 @@ paths:
       description: GrCR Obtain an authentication grant (a token)
       operationId: Grant
       parameters:
-        - $ref: '#/components/parameters/partyauthenticationid'
+        - $ref: '#/components/parameters/party-authentication-id'
       requestBody:
         $ref: '#/components/requestBodies/PartyAuthenticationAssessment'
       responses:
@@ -163,7 +163,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/PartyAuthentication/{partyauthenticationid}/Retrieve':
+  '/party-authentication/{party-authentication-id}/retrieve':
     get:
       tags:
         - CR - PartyAuthenticationAssessment
@@ -171,7 +171,7 @@ paths:
       description: ReCR Retrieve details about an authentication assessment
       operationId: Retrieve
       parameters:
-        - $ref: '#/components/parameters/partyauthenticationid'
+        - $ref: '#/components/parameters/party-authentication-id'
       responses:
         '200':
           $ref: '#/components/responses/PartyAuthenticationAssessment'
@@ -187,7 +187,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/PartyAuthentication/{partyauthenticationid}/Password/Evaluate':
+  '/party-authentication/{party-authentication-id}/password/evaluate':
     post:
       tags:
         - BQ - Password
@@ -195,7 +195,7 @@ paths:
       description: EvBQ Evaluate customer authenticity using passwords
       operationId: EvaluatePassword
       parameters:
-        - $ref: '#/components/parameters/partyauthenticationid'
+        - $ref: '#/components/parameters/party-authentication-id'
       requestBody:
         $ref: '#/components/requestBodies/Password'
       responses:
@@ -213,7 +213,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/PartyAuthentication/{partyauthenticationid}/Password/{passwordid}/Retrieve':
+  '/party-authentication/{party-authentication-id}/password/{password-id}/retrieve':
     get:
       tags:
         - BQ - Password
@@ -221,8 +221,8 @@ paths:
       description: ReBQ Retrieve details about a password evaluation
       operationId: RetrievePassword
       parameters:
-        - $ref: '#/components/parameters/partyauthenticationid'
-        - $ref: '#/components/parameters/passwordid'
+        - $ref: '#/components/parameters/party-authentication-id'
+        - $ref: '#/components/parameters/password-id'
       responses:
         '200':
           $ref: '#/components/responses/Password'
@@ -238,7 +238,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/PartyAuthentication/{partyauthenticationid}/Question/Evaluate':
+  '/party-authentication/{party-authentication-id}/question/evaluate':
     post:
       tags:
         - BQ - Question
@@ -246,7 +246,7 @@ paths:
       description: EvBQ Evaluate customer authenticity using secret questions
       operationId: EvaluateQuestion
       parameters:
-        - $ref: '#/components/parameters/partyauthenticationid'
+        - $ref: '#/components/parameters/party-authentication-id'
       requestBody:
         $ref: '#/components/requestBodies/Question'
       responses:
@@ -264,7 +264,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/PartyAuthentication/{partyauthenticationid}/Question/{questionid}/Retrieve':
+  '/party-authentication/{party-authentication-id}/question/{question-id}/retrieve':
     get:
       tags:
         - BQ - Question
@@ -272,8 +272,8 @@ paths:
       description: ReBQ Retrieve details about a secret question evaluation
       operationId: RetrieveQuestion
       parameters:
-        - $ref: '#/components/parameters/partyauthenticationid'
-        - $ref: '#/components/parameters/questionid'
+        - $ref: '#/components/parameters/party-authentication-id'
+        - $ref: '#/components/parameters/question-id'
       responses:
         '200':
           $ref: '#/components/responses/Question'
@@ -289,7 +289,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/PartyAuthentication/{partyauthenticationid}/Document/Evaluate':
+  '/party-authentication/{party-authentication-id}/document/evaluate':
     post:
       tags:
         - BQ - Document
@@ -297,7 +297,7 @@ paths:
       description: EvBQ Evaluate customer authenticity using documents
       operationId: EvaluateDocument
       parameters:
-        - $ref: '#/components/parameters/partyauthenticationid'
+        - $ref: '#/components/parameters/party-authentication-id'
       requestBody:
         $ref: '#/components/requestBodies/Document'
       responses:
@@ -315,7 +315,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/PartyAuthentication/{partyauthenticationid}/Document/{documentid}/Retrieve':
+  '/party-authentication/{party-authentication-id}/document/{document-id}/retrieve':
     get:
       tags:
         - BQ - Document
@@ -323,8 +323,8 @@ paths:
       description: ReBQ Retrieve details about a document evaluation
       operationId: RetrieveDocument
       parameters:
-        - $ref: '#/components/parameters/partyauthenticationid'
-        - $ref: '#/components/parameters/documentid'
+        - $ref: '#/components/parameters/party-authentication-id'
+        - $ref: '#/components/parameters/document-id'
       responses:
         '200':
           $ref: '#/components/responses/Document'
@@ -340,7 +340,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/PartyAuthentication/{partyauthenticationid}/Device/Evaluate':
+  '/party-authentication/{party-authentication-id}/device/evaluate':
     post:
       tags:
         - BQ - Device
@@ -348,7 +348,7 @@ paths:
       description: EvBQ Evaluate customer authenticity using a device
       operationId: EvaluateDevice
       parameters:
-        - $ref: '#/components/parameters/partyauthenticationid'
+        - $ref: '#/components/parameters/party-authentication-id'
       requestBody:
         $ref: '#/components/requestBodies/Device'
       responses:
@@ -366,7 +366,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/PartyAuthentication/{partyauthenticationid}/Device/{deviceid}/Retrieve':
+  '/party-authentication/{party-authentication-id}/device/{device-id}/retrieve':
     get:
       tags:
         - BQ - Device
@@ -374,8 +374,8 @@ paths:
       description: ReBQ Retrieve details about a device evaluation
       operationId: RetrieveDevice
       parameters:
-        - $ref: '#/components/parameters/partyauthenticationid'
-        - $ref: '#/components/parameters/deviceid'
+        - $ref: '#/components/parameters/party-authentication-id'
+        - $ref: '#/components/parameters/device-id'
       responses:
         '200':
           $ref: '#/components/responses/Device'
@@ -391,7 +391,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/PartyAuthentication/{partyauthenticationid}/Biometric/Evaluate':
+  '/party-authentication/{party-authentication-id}/biometric/evaluate':
     post:
       tags:
         - BQ - Biometric
@@ -399,7 +399,7 @@ paths:
       description: EvBQ Evaluate customer authenticity using biometrics
       operationId: EvaluateBiometric
       parameters:
-        - $ref: '#/components/parameters/partyauthenticationid'
+        - $ref: '#/components/parameters/party-authentication-id'
       requestBody:
         $ref: '#/components/requestBodies/Biometric'
       responses:
@@ -417,7 +417,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/PartyAuthentication/{partyauthenticationid}/Biometric/{biometricid}/Retrieve':
+  '/party-authentication/{party-authentication-id}/biometric/{biometric-id}/retrieve':
     get:
       tags:
         - BQ - Biometric
@@ -425,8 +425,8 @@ paths:
       description: ReBQ Retrieve details about a biometric evaluation
       operationId: RetrieveBiometric
       parameters:
-        - $ref: '#/components/parameters/partyauthenticationid'
-        - $ref: '#/components/parameters/biometricid'
+        - $ref: '#/components/parameters/party-authentication-id'
+        - $ref: '#/components/parameters/biometric-id'
       responses:
         '200':
           $ref: '#/components/responses/Biometric'
@@ -442,7 +442,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/PartyAuthentication/{partyauthenticationid}/Behavior/Evaluate':
+  '/party-authentication/{party-authentication-id}/behavior/evaluate':
     post:
       tags:
         - BQ - Behavior
@@ -450,7 +450,7 @@ paths:
       description: EvBQ Evaluate customer authenticity using behaviors
       operationId: EvaluateBehavior
       parameters:
-        - $ref: '#/components/parameters/partyauthenticationid'
+        - $ref: '#/components/parameters/party-authentication-id'
       requestBody:
         $ref: '#/components/requestBodies/Behavior'
       responses:
@@ -468,7 +468,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/PartyAuthentication/{partyauthenticationid}/Behavior/{behaviorid}/Retrieve':
+  '/party-authentication/{party-authentication-id}/behavior/{behavior-id}/retrieve':
     get:
       tags:
         - BQ - Behavior
@@ -476,8 +476,8 @@ paths:
       description: ReBQ Retrieve details about a behavior evaluation
       operationId: RetrieveBehavior
       parameters:
-        - $ref: '#/components/parameters/partyauthenticationid'
-        - $ref: '#/components/parameters/behaviorid'
+        - $ref: '#/components/parameters/party-authentication-id'
+        - $ref: '#/components/parameters/behavior-id'
       responses:
         '200':
           $ref: '#/components/responses/Behavior'
@@ -1517,50 +1517,50 @@ components:
           schema:
             $ref: '#/components/schemas/Behavior'
   parameters:
-    partyauthenticationid:
-      name: partyauthenticationid
+    party-authentication-id:
+      name: party-authentication-id
       in: path
       required: true
       style: simple
       schema:
         type: string
-    passwordid:
-      name: passwordid
+    password-id:
+      name: password-id
       in: path
       required: true
       style: simple
       schema:
         type: string
-    questionid:
-      name: questionid
+    question-id:
+      name: question-id
       in: path
       required: true
       style: simple
       schema:
         type: string
-    documentid:
-      name: documentid
+    document-id:
+      name: document-id
       in: path
       required: true
       style: simple
       schema:
         type: string
-    deviceid:
-      name: deviceid
+    device-id:
+      name: device-id
       in: path
       required: true
       style: simple
       schema:
         type: string
-    biometricid:
-      name: biometricid
+    biometric-id:
+      name: biometric-id
       in: path
       required: true
       style: simple
       schema:
         type: string
-    behaviorid:
-      name: behaviorid
+    behavior-id:
+      name: behavior-id
       in: path
       required: true
       style: simple
