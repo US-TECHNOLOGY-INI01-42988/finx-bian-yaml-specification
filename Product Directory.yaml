@@ -9,7 +9,7 @@ info:
 servers:
   - url: https://virtserver.swaggerhub.com/B154/BIAN/ProductDirectory/13.0.0
 paths:
-  /ProductDirectory/Register:
+  /product-directory/register:
     post:
       tags:
         - CR - ProductDirectoryEntry
@@ -33,7 +33,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/ProductDirectory/{productdirectoryid}/Update':
+  '/product-directory/{product-directory-id}/update':
     put:
       tags:
         - CR - ProductDirectoryEntry
@@ -59,7 +59,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/ProductDirectory/{productdirectoryid}/Request':
+  '/product-directory/{product-directory-id}/request':
     put:
       tags:
         - CR - ProductDirectoryEntry
@@ -85,7 +85,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/ProductDirectory/{productdirectoryid}/Retrieve':
+  '/product-directory/{product-directory-id}/retrieve':
     get:
       tags:
         - CR - ProductDirectoryEntry
@@ -109,7 +109,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/ProductDirectory/{productdirectoryid}/Operations/Register':
+  '/product-directory/{product-directory-id}/operations/register':
     post:
       tags:
         - BQ - Operations
@@ -135,7 +135,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/ProductDirectory/{productdirectoryid}/Operations/{operationsid}/Update':
+  '/product-directory/{product-directory-id}/operations/{operations-id}/update':
     put:
       tags:
         - BQ - Operations
@@ -162,7 +162,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/ProductDirectory/{productdirectoryid}/Operations/{operationsid}/Retrieve':
+  '/product-directory/{product-directory-id}/operations/{operations-id}/retrieve':
     get:
       tags:
         - BQ - Operations
@@ -187,7 +187,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/ProductDirectory/{productdirectoryid}/SalesandMarketing/Register':
+  '/product-directory/{product-directory-id}/sales-and-marketing/register':
     post:
       tags:
         - BQ - SalesandMarketing
@@ -213,7 +213,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/ProductDirectory/{productdirectoryid}/SalesandMarketing/{salesandmarketingid}/Update':
+  '/product-directory/{product-directory-id}/sales-and-marketing/{sales-and-marketing-id}/update':
     put:
       tags:
         - BQ - SalesandMarketing
@@ -240,7 +240,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/ProductDirectory/{productdirectoryid}/SalesandMarketing/{salesandmarketingid}/Retrieve':
+  '/product-directory/{product-directory-id}/sales-and-marketing/{sales-and-marketing-id}/retrieve':
     get:
       tags:
         - BQ - SalesandMarketing
@@ -265,7 +265,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/ProductDirectory/{productdirectoryid}/Servicing/Register':
+  '/product-directory/{product-directory-id}/servicing/register':
     post:
       tags:
         - BQ - Servicing
@@ -291,7 +291,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/ProductDirectory/{productdirectoryid}/Servicing/{servicingid}/Update':
+  '/product-directory/{product-directory-id}/servicing/{servicing-id}/update':
     put:
       tags:
         - BQ - Servicing
@@ -318,7 +318,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/ProductDirectory/{productdirectoryid}/Servicing/{servicingid}/Retrieve':
+  '/product-directory/{product-directory-id}/servicing/{servicing-id}/retrieve':
     get:
       tags:
         - BQ - Servicing
@@ -343,7 +343,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/ProductDirectory/{productdirectoryid}/Production/Register':
+  '/product-directory/{product-directory-id}/production/register':
     post:
       tags:
         - BQ - Production
@@ -369,7 +369,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/ProductDirectory/{productdirectoryid}/Production/{productionid}/Update':
+  '/product-directory/{product-directory-id}/production/{production-id}/update':
     put:
       tags:
         - BQ - Production
@@ -396,7 +396,7 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/ProductDirectory/{productdirectoryid}/Production/{productionid}/Retrieve':
+  '/product-directory/{product-directory-id}/production/{production-id}/retrieve':
     get:
       tags:
         - BQ - Production
@@ -436,7 +436,7 @@ components:
           type: string
           format: string
       description: Status Attributes
-    text:
+    Text:
       type: object
       properties:
         Text:
@@ -444,7 +444,7 @@ components:
           description: Text is a character string such as a finite set of characters generally in the form of words of a language. (UN/CEFACT)
           format: datatype
       description: "The current version of the product referenced in the directory ||\r\n|"
-    productfeaturetypevalues:
+    ProductFeatureTypeValues:
       enum:
         - Bankingservice
         - Administrationservice
@@ -452,15 +452,15 @@ components:
         - Pricefeature
       type: string
       description: ">\r\n* `Bankingservice` - A classification that distinguishes between instances of product features according to the core banking services, functionality and/or objectives of banking.\n\ne.g. deposit services, exchange services, etc.\n\nThe primary reason for the contract with the client are the banking services. These services can be classified as follows:\n1. Selling services\n2. Financial Instruments Exchange\n3. Financial Stock Management\n4. Financial Transfers\n5. Financial Risk Transfer\n6. Business Operating\n7. Advisory\n8. Reporting\n\n\r\n* `Administrationservice` - A classification that distinguishes between instances of product features according to administrative tasks related to the Banking Product or Service.\r\n* `Accessservice` - A classification that distinguishes between product features according to way of the banking services can be accessed.\n\nThe access to services becomes more and more important in the evolving markets. \nWe need to separate different parts:\n1. The physical access to the infrastructure that allows access to the bank (where)\n2. The authorization of different parties to use the services of the bank (who)\n3. The agreed procedure to have access to different services (how)\n4. The services that are available for the different parties (what)\n\r\n* `Pricefeature` - A classification that distinguishes between instances of product features according to the cost/profit that is related to Banking Products or Services.\n\nIn all commercial offerings, there is an agreed cost for both parties (e.g. the interest arrangements are in both directions). The pricing structure of products or packages is a service that gives the possibility to the client to adapt his costs to his individual situation.\nWe see different generic categories in the pricing structure of the different products.\n1. Compensations\n2. Prices\n3. Fees\n4. Discounts\r\n"
-    productfeature:
+    ProductFeature:
       type: object
       properties:
         ProductFeatureType:
-          $ref: '#/components/schemas/productfeaturetypevalues'
+          $ref: '#/components/schemas/ProductFeatureTypeValues'
         ProductFeatureSpecification:
-          $ref: '#/components/schemas/text'
+          $ref: '#/components/schemas/Text'
       description: Descriptions of product features and product options for review
-    modalitytypevalues:
+    ModalityTypeValues:
       enum:
         - AllocationModality
         - CalculationModality
@@ -471,13 +471,13 @@ components:
         - DeliveryModality
       type: string
       description: ">\r\n* `AllocationModality` - \r\n* `CalculationModality` - \r\n* `DerivationModality` - \r\n* `PaymentModality` - \r\n* `ProcessingModality` - \r\n* `ApplicationModality` - \r\n* `DeliveryModality` - \r\n"
-    productfeaturemodality:
+    ProductFeatureModality:
       type: object
       properties:
         ProductFeatureModalityType:
-          $ref: '#/components/schemas/modalitytypevalues'
+          $ref: '#/components/schemas/ModalityTypeValues'
       description: Allowed price/rate ranges by credit grade/customer type (can be reviewed through simulation)
-    rulesettypevalues:
+    RulesetTypeValues:
       enum:
         - Policy
         - Regulation
@@ -487,7 +487,7 @@ components:
         - Standard
       type: string
       description: ">\r\n* `Policy` - Rule that governs business execution.\n\nThe set of basic principles and associated guidelines, formulated and enforced by the governing body of an organization, to direct and limit its actions in pursuit of long-term goals. (Business Dictionary)\n\r\n* `Regulation` - A rule used to carry out a law (FIBO)\n\nBusiness Dictionary: a rule (with or without the coercive power of law) employed in controlling, directing, or managing an activity, organization, or system. \n\nThe set of rules and legislation governing certain actions. \nhttps://financial-dictionary.thefreedictionary.com/Regulatory\r\n* `Law` - A binding rule that the courts will enforce.\nA system of rules and guidelines which are enforced through social institutions to govern behavior. (FIBO)\n\r\n* `Guideline` - A recommended practice (adapted from Business Dictionary)\nA general rule, principle, or piece of advice.\r\n* `Criterion` - A principle or standard by which something may be judged or decided.\n\nRead more: http://www.businessdictionary.com/definition/criterion.html\r\n* `Standard` - A rule considered by an authority or by general consent as a basis of comparison\r\n"
-    name:
+    Name:
       type: object
       properties:
         Name:
@@ -495,7 +495,7 @@ components:
           description: 'A name is a word or phrase that constitutes the distinctive designation of a person, place, thing or concept. (UN/CEFAT)'
           format: datatype
       description: ''
-    value:
+    Value:
       type: object
       properties:
         Value:
@@ -503,13 +503,13 @@ components:
           description: "Data or set of data \n\n- A value is the concept of worth in general that is assigned or is determined by measurement, assessment or calculation. (UN/CEFACT)"
           format: datatype
       description: ''
-    partytypevalues:
+    PartyTypeValues:
       enum:
         - Person
         - Organisation
       type: string
       description: ">\r\n* `Person` - Human entity, as distinguished from a corporate entity (which is sometimes referred to as an 'artificial person'). ISO20022\r\n* `Organisation` - Organised structure that is set up for a particular purpose. For example, a business, government body, department, charity, or financial institution. ISO20022\r\n"
-    datetimetypevalues:
+    DateTimeTypeValues:
       enum:
         - MaturityDate
         - InitiatedDate
@@ -533,19 +533,19 @@ components:
         - FulfillmentDate
       type: string
       description: ">\r\n* `MaturityDate` - \r\n* `InitiatedDate` - \r\n* `RequestedDate` - \r\n* `ExecutedDate` - \r\n* `OpenDate` - \r\n* `CloseDate` - \r\n* `ExpiryDate` - \r\n* `EffectiveDate` - \r\n* `CreatingDate` - \r\n* `ActivationDate` - \r\n* `DeactivationDate` - \r\n* `BlockingDate` - \r\n* `SendingDate` - \r\n* `ValidFromDate` - \r\n* `ValidToDate` - \r\n* `ReceivingDate` - \r\n* `SigningDate` - \r\n* `DueDate` - \r\n* `ValueDate` - \r\n* `FulfillmentDate` - \r\n"
-    datetime:
+    DateTime:
       type: object
       properties:
         DateTimeContent:
-          $ref: '#/components/schemas/text'
+          $ref: '#/components/schemas/Text'
         TimeZoneCode:
-          $ref: '#/components/schemas/text'
+          $ref: '#/components/schemas/Text'
         DaylightSavingIndicator:
-          $ref: '#/components/schemas/text'
+          $ref: '#/components/schemas/Text'
         DateTimeType:
-          $ref: '#/components/schemas/datetimetypevalues'
+          $ref: '#/components/schemas/DateTimeTypeValues'
       description: ''
-    partyidentificationtypevalues:
+    PartyIdentificationTypeValues:
       enum:
         - Taxidentificationnumber
         - Nationalregistrationnumber
@@ -563,15 +563,15 @@ components:
         - Nationalregistrationidentificationnumber
       type: string
       description: ">\r\n* `Taxidentificationnumber` - Number assigned by a tax authority to an entity.\r\n* `Nationalregistrationnumber` - Number assigned by a national registration authority to an entity. In Singapore this is known as the NRIC. (ISO20022)\r\n* `Registrationauthorityidentification` - An identifier for the Legal Entity in a business registry in the jurisdiction of legal registration, or in the appropriate registration authority. (ISO20022)\r\n* `LEI(LegalEntityIdentifier)` - \r\n* `Alienregistrationnumber` - Number assigned by a government agency to identify foreign nationals.\r\n* `Passportnumber` - Number assigned by a passport authority.\r\n* `Taxexemptidentificationnumber` - Number assigned to a tax exempt entity.\r\n* `Corporateidentification` - Number assigned to a corporate entity.\r\n* `Driverlicensenumber` - Number assigned to a driver's license.\r\n* `Foreigninvestmentidentitynumber` - Number assigned to a foreign investor (other than the alien number).\r\n* `Socialsecuritynumber` - Number assigned by a social security agency.\r\n* `Identitycardnumber` - Number assigned by a national authority to an identity card.\r\n* `Concat` - Number assigned by an issuer to identify a customer via the concatenation of the birthdate and characters of the first name and surname.\r\n* `Nationalregistrationidentificationnumber` - National registration identification number. In Singapore this is known as the NRIC.\r\n"
-    partyidentification:
+    PartyIdentification:
       type: object
       properties:
         PartyIdentificationType:
-          $ref: '#/components/schemas/partyidentificationtypevalues'
+          $ref: '#/components/schemas/PartyIdentificationTypeValues'
         PartyIdentification:
-          $ref: '#/components/schemas/identifier'
+          $ref: '#/components/schemas/Identifier'
       description: ''
-    partylegalstructuretypevalues:
+    PartyLegalStructureTypeValues:
       enum:
         - Individual
         - CommunityInterestCompany
@@ -587,29 +587,29 @@ components:
         - Sole(SoleTrader)
       type: string
       description: ">\r\n* `Individual` - \r\n* `CommunityInterestCompany` - \r\n* `CharitableIncorporatedOrganisation` - \r\n* `Co-Operative` - \r\n* `Charity` - \r\n* `GeneralPartnership` - \r\n* `LimitedLiabilityPartnership` - \r\n* `ScottishLimitedPartnership` - \r\n* `LimitedPartnership` - \r\n* `PrivateLimitedCompany` - \r\n* `PublicLimitedCompany` - \r\n* `Sole(SoleTrader)` - \r\n"
-    party:
+    Party:
       type: object
       properties:
         PartyName:
-          $ref: '#/components/schemas/name'
+          $ref: '#/components/schemas/Name'
         PartyType:
-          $ref: '#/components/schemas/partytypevalues'
+          $ref: '#/components/schemas/PartyTypeValues'
         PartyDateTime:
-          $ref: '#/components/schemas/datetime'
+          $ref: '#/components/schemas/DateTime'
         PartyIdentification:
-          $ref: '#/components/schemas/partyidentification'
+          $ref: '#/components/schemas/PartyIdentification'
         PartyLegalStructureType:
-          $ref: '#/components/schemas/partylegalstructuretypevalues'
+          $ref: '#/components/schemas/PartyLegalStructureTypeValues'
       description: ''
-    datetimeperiod:
+    DateTimePeriod:
       type: object
       properties:
         FromDateTime:
-          $ref: '#/components/schemas/datetime'
+          $ref: '#/components/schemas/DateTime'
         ToDateTime:
-          $ref: '#/components/schemas/datetime'
+          $ref: '#/components/schemas/DateTime'
       description: ''
-    partyinvolvementtypevalues:
+    PartyInvolvementTypeValues:
       enum:
         - Agreementinvolvement
         - Partyinvolvement
@@ -620,67 +620,67 @@ components:
         - Bankguaranteeinvolvement
       type: string
       description: ">\r\n* `Agreementinvolvement` - \r\n* `Partyinvolvement` - \r\n* `Arrangementinvolvement` - \r\n* `Designspecificationinvolvement` - \r\n* `Relationshipinvolvement` - \r\n* `Locationinvolvement` - \r\n* `Bankguaranteeinvolvement` - \r\n"
-    partyrole:
+    PartyRole:
       type: object
       properties:
         PartyRoleType:
-          $ref: '#/components/schemas/text'
+          $ref: '#/components/schemas/Text'
         PartyRoleName:
-          $ref: '#/components/schemas/name'
+          $ref: '#/components/schemas/Name'
         PartyRoleValidityPeriod:
-          $ref: '#/components/schemas/datetimeperiod'
+          $ref: '#/components/schemas/DateTimePeriod'
         PartyInvolvementType:
-          $ref: '#/components/schemas/partyinvolvementtypevalues'
+          $ref: '#/components/schemas/PartyInvolvementTypeValues'
       description: ''
-    involvedparty:
+    InvolvedParty:
       type: object
       properties:
         PartyReference:
-          $ref: '#/components/schemas/party'
+          $ref: '#/components/schemas/Party'
         PartyInvolvement:
-          $ref: '#/components/schemas/partyrole'
+          $ref: '#/components/schemas/PartyRole'
       description: Entity that assigns and manages the identification.
-    identifier:
+    Identifier:
       type: object
       properties:
         IdentifierValue:
-          $ref: '#/components/schemas/value'
+          $ref: '#/components/schemas/Value'
         IdentifierIssuingAuthority:
-          $ref: '#/components/schemas/involvedparty'
+          $ref: '#/components/schemas/InvolvedParty'
         IdentifierStartDate:
-          $ref: '#/components/schemas/datetime'
+          $ref: '#/components/schemas/DateTime'
         IdentifierEndDate:
-          $ref: '#/components/schemas/datetime'
+          $ref: '#/components/schemas/DateTime'
       description: ''
-    status:
+    Status:
       type: object
       properties:
         StatusReason:
-          $ref: '#/components/schemas/text'
+          $ref: '#/components/schemas/Text'
         StatusDateTime:
-          $ref: '#/components/schemas/datetime'
+          $ref: '#/components/schemas/DateTime'
         StatusValidityPeriod:
-          $ref: '#/components/schemas/datetimeperiod'
+          $ref: '#/components/schemas/DateTimePeriod'
         StatusInvolvedParty:
-          $ref: '#/components/schemas/involvedparty'
+          $ref: '#/components/schemas/InvolvedParty'
       description: ''
-    ruleset:
+    RuleSet:
       type: object
       properties:
         RuleSetDefinition:
-          $ref: '#/components/schemas/text'
+          $ref: '#/components/schemas/Text'
         RuleSetInterpretation:
-          $ref: '#/components/schemas/text'
+          $ref: '#/components/schemas/Text'
         RuleSetType:
-          $ref: '#/components/schemas/rulesettypevalues'
+          $ref: '#/components/schemas/RulesetTypeValues'
         RuleSetName:
-          $ref: '#/components/schemas/name'
+          $ref: '#/components/schemas/Name'
         RuleSetIdentification:
-          $ref: '#/components/schemas/identifier'
+          $ref: '#/components/schemas/Identifier'
         RuleSetLifecycleStatus:
-          $ref: '#/components/schemas/status'
+          $ref: '#/components/schemas/Status'
       description: Defines suitability requirements set by the bank
-    customerproducteligibilityprofileclass:
+    CustomerProductEligibilityProfileClass:
       type: object
       properties:
         CustomerProductEligibilityProfileClass:
@@ -688,7 +688,7 @@ components:
           description: A value of Customer Product Profile Type whereby customer product eligibility will be defined.
           format: class
       description: Applicable legal or regulatory requirements governing eligibility
-    requirementtypevalues:
+    RequirementTypeValues:
       enum:
         - FunctionalRequirement
         - TechnicalRequirement
@@ -703,11 +703,11 @@ components:
         - ProcessingRequirement
       type: string
       description: ">\r\n* `FunctionalRequirement` - \r\n* `TechnicalRequirement` - \r\n* `OperationalRequirement` - \r\n* `LegalRequirement` - \r\n* `TestingRequirement` - \r\n* `SalesAndMarketingRequirement` - \r\n* `ServicingRequirement` - \r\n* `ProductionRequirement` - \r\n* `SuitabilityRequirement` - \r\n* `EligibilityRequirement` - \r\n* `ProcessingRequirement` - \r\n"
-    productrequirement:
+    ProductRequirement:
       type: object
       properties:
         ProductRequirementType:
-          $ref: '#/components/schemas/requirementtypevalues'
+          $ref: '#/components/schemas/RequirementTypeValues'
         ProductRequirementSpecification:
           type: string
           description: ''
@@ -717,29 +717,29 @@ components:
       type: object
       properties:
         ProductandServiceSalesMaterial:
-          $ref: '#/components/schemas/text'
+          $ref: '#/components/schemas/Text'
         ProductandServicesFeaturesAndOptions:
-          $ref: '#/components/schemas/productfeature'
+          $ref: '#/components/schemas/ProductFeature'
         ProductandServicePricingTable:
-          $ref: '#/components/schemas/productfeaturemodality'
+          $ref: '#/components/schemas/ProductFeatureModality'
         ProductandServiceFeesPenaltiesTable:
-          $ref: '#/components/schemas/productfeaturemodality'
+          $ref: '#/components/schemas/ProductFeatureModality'
         ProductSuitabilityGuide:
-          $ref: '#/components/schemas/ruleset'
+          $ref: '#/components/schemas/RuleSet'
         ProductandServiceEligibilityType:
-          $ref: '#/components/schemas/customerproducteligibilityprofileclass'
+          $ref: '#/components/schemas/CustomerProductEligibilityProfileClass'
         ProductandServiceEligibilityDescription:
-          $ref: '#/components/schemas/text'
+          $ref: '#/components/schemas/Text'
         ProductandServiceOfferProcessingRequirements:
-          $ref: '#/components/schemas/productrequirement'
+          $ref: '#/components/schemas/ProductRequirement'
       description: "\"An assertion or statement with regard to a concept, a characteristic.\n\nExamples: Product pricing rules, Customer reference details\n\nA descriptor can be atomic or composed.\"\nProspect Management"
-    schedule:
+    Schedule:
       type: object
       properties:
         ScheduleType:
-          $ref: '#/components/schemas/text'
+          $ref: '#/components/schemas/Text'
       description: The intended schedule of operational tasks and product service availability
-    featuretypevalues:
+    FeatureTypeValues:
       enum:
         - FeeFeature
         - InterestFeature
@@ -756,7 +756,7 @@ components:
         - PriceFeature
       type: string
       description: ">\r\n* `FeeFeature` - This refers to the functionality in a system or platform that manages, calculates, or displays fees associated with specific transactions or services.\r\n* `InterestFeature` - This feature calculates and tracks interest earnings or charges on accounts, loans, or investments over time.\r\n* `WithdrawalFeature` - The withdraw feature typically refers to an option or functionality that allows users to retrieve or remove something from a system or platform.\r\n* `DepositFeature` - This refers to a functionality that allows users to add funds to an account or system, often by transferring money from another source.\r\n* `SweepFeature` - \r\n* `LienFeature` - \r\n* `PaymentFeature` - This refers to the functionality that facilitates or tracks the transfer of funds for a purchase or settlement of dues.\r\n* `RepaymentFeature` - This feature facilitates or manages the process of paying back borrowed funds, such as loans, credit card balances, or advances.\r\n* `LimitFeature` - This feature sets, monitors, or enforces restrictions on the maximum amount that can be accessed, spent, or transacted within a system.\r\n* `OverdraftFeature` - This functionality allows users to withdraw more money than what is available in their account balance, often up to a predefined limit.\r\n* `StatementFeature` - The statement feature refers to a functionality in banking, finance, or digital platforms that provides users with a detailed record of their transactions or activities over a specific period.\r\n* `CurrencyExchangeFeature` - This feature enables users to convert funds from one currency to another at prevailing exchange rates, often within financial or payment platforms.\r\n* `PriceFeature` - This feature involves displaying or managing the price of goods, services, or financial instruments within a platform.\r\n"
-    actiontypevalues:
+    ActionTypeValues:
       enum:
         - Initiate
         - Execute
@@ -768,13 +768,13 @@ components:
         - Calculate
       type: string
       description: ">\r\n* `Initiate` - \r\n* `Execute` - \r\n* `Create` - \r\n* `Transfer` - \r\n* `Pay` - \r\n* `Deliver` - \r\n* `Apply` - \r\n* `Calculate` - \r\n"
-    action:
+    Action:
       type: object
       properties:
         ActionType:
-          $ref: '#/components/schemas/actiontypevalues'
+          $ref: '#/components/schemas/ActionTypeValues'
       description: ''
-    arrangementstatustypevalues:
+    ArrangementStatusTypeValues:
       enum:
         - Requested
         - Proposed
@@ -785,15 +785,15 @@ components:
         - Terminated
       type: string
       description: ">\r\n* `Requested` - \r\n* `Proposed` - \r\n* `Offered` - \r\n* `Accepted` - \r\n* `Cancelled` - \r\n* `Fulfilled` - \r\n* `Terminated` - \r\n"
-    arrangementstatus:
+    ArrangementStatus:
       type: object
       properties:
         ArrangementStatus:
-          $ref: '#/components/schemas/status'
+          $ref: '#/components/schemas/Status'
         ArrangementStatusType:
-          $ref: '#/components/schemas/arrangementstatustypevalues'
+          $ref: '#/components/schemas/ArrangementStatusTypeValues'
       description: 'A characteristic of arrangement which refers to the LifecycleStatus of arrangement (e.g., requested, proposed, offered, accepted, cancelled, terminated, fulfilled, etc.)'
-    subject:
+    Subject:
       type: object
       properties:
         Subject:
@@ -801,7 +801,7 @@ components:
           description: A thing that is discussed or dealt whit in agreement/arrangement about doing or not doing (as action) something.
           format: class
       description: ''
-    arrangementtypevalues:
+    ArrangementTypeValues:
       enum:
         - SweepArrangement
         - WithdrawalArrangement
@@ -833,35 +833,35 @@ components:
         - MaturityArrangement
       type: string
       description: ">\r\n* `SweepArrangement` - An arrangement into which is promised for the set-up and execution of structured sweeps to and from the facility to a linked account.\r\n* `WithdrawalArrangement` - An arrangement into which is promised to deliver Withdraw Service  to take fund out of an account. \r\n* `DepositArrangement` - An arrangement into which is promised to deliver Deposit Service  to place funds into an account for safekeeping. \r\n* `InterestArrangement` - An arrangement into which is promised to apply a pricing element expressed in a percentage  to a principal amount.\r\n* `FeeArrangement` - An arrangement into which is promised to apply a charge for services rendered. \r\n* `LienArrangement` - An arrangement into which is promised for placing a lien or block on the account for a specified purpose, amount, and period. \r\n* `InformationArrangement` - An arrangement concerning the information the bank will provide about the agreement/account\r\n* `PaymentArrangement` - An arrangement into which is promised to deliver a specific payment service including regular payments, standing orders, direct debits and bill pay instructions. \r\n* `EntitlementArrangement` - Right or obligation linked to the involvement of a party in an agreement\r\n* `PeriodArrangement` - \r\n* `CollateralArrangement` - An arrangement into which is promised for handling the oversight of the allocation, valuation and administration of collateral associated with the facility. \r\n* `LimitArrangement` - An arrangement to limit something\ne.g., the number of transaction per week, the amount of money allowed to withdraw per week/day and etc. \r\n* `AccessArrangement` - An arrangement that allows or restricts the access to a service or product, channel or device through a specific access point\r\n* `CardPaymentArrangement` - An arrangement into which is promised to deliver Card payment Service to execute payment transactions through a payment card, including online payments. \r\n* `StandingOrderArrangement` - An arrangement into which is promised to deliver Standing Order Service to make regular transfers on given dates to a named beneﬁciary. \r\n* `OverdraftArrangement` - An arrangement into which is promised to deliver Overdraft Service  that allows fund transfer even if there is no provision on the account. \r\n* `RepaymentArrangement` - An arrangement into which is promised for paying back money previously borrowed from a lender. \r\n* `StatementArrangement` - An arrangement into which is promised to deliver a reporting service on payment transactions registered on an account. \r\n* `CreditTransferArrangement` - An arrangement into which is promised to allow a payer to transfer fund to a beneficiary. \r\n* `ProductAndServiceArrangement` - \r\n* `FactoringArrangement` - \r\n* `RolloverArrangement` - Arrangement stipulating the modalities for an automatic renewal of the agreement\n\ni.e. the replacement of the agreement with a new one without renewed negociation and witout explicit agreement of the customer \r\n* `RestructuringArrangement` - \r\n* `InsuranceArrangement` - \r\n* `CollectionArrangement` - An arrangement into which is promised to collect past-due debts from borrowers\r\n* `UnderwritingArrangement` - A contractual agreement between parties that commits the underwriter to assuming risk.\r\n* `TerminationArrangement` - \r\n* `MaturityArrangement` - \r\n"
-    arrangement:
+    Arrangement:
       type: object
       properties:
         ArrangementAction:
-          $ref: '#/components/schemas/action'
+          $ref: '#/components/schemas/Action'
         ArrangementStartDate:
-          $ref: '#/components/schemas/datetime'
+          $ref: '#/components/schemas/DateTime'
         ArrangementEndDate:
-          $ref: '#/components/schemas/datetime'
+          $ref: '#/components/schemas/DateTime'
         ArrangementStatus:
-          $ref: '#/components/schemas/arrangementstatus'
+          $ref: '#/components/schemas/ArrangementStatus'
         ArrangementSubjectMatter:
-          $ref: '#/components/schemas/subject'
+          $ref: '#/components/schemas/Subject'
         Arrangementtype:
-          $ref: '#/components/schemas/arrangementtypevalues'
+          $ref: '#/components/schemas/ArrangementTypeValues'
       description: The default parameter setting and possible value range
     Operations:
       type: object
       properties:
         ProductandServiceOperatingSchedule:
-          $ref: '#/components/schemas/schedule'
+          $ref: '#/components/schemas/Schedule'
         ProductandServiceConfigurationParameterType:
-          $ref: '#/components/schemas/featuretypevalues'
+          $ref: '#/components/schemas/FeatureTypeValues'
         ProductandServiceConfigurationParameterDescription:
-          $ref: '#/components/schemas/text'
+          $ref: '#/components/schemas/Text'
         ProductandServiceConfigurationParameterSetting:
-          $ref: '#/components/schemas/arrangement'
+          $ref: '#/components/schemas/Arrangement'
       description: "\"An assertion or statement with regard to a concept, a characteristic.\n\nExamples: Product pricing rules, Customer reference details\n\nA descriptor can be atomic or composed.\"\nProspect Management"
-    casetypevalues:
+    CaseTypeValues:
       enum:
         - Card
         - Loan
@@ -872,7 +872,7 @@ components:
         - Other
       type: string
       description: ">\r\n* `Card` - \r\n* `Loan` - \r\n* `Fraud` - \r\n* `Payment` - \r\n* `Market` - \r\n* `Security` - \r\n* `Other` - \r\n"
-    geographicalareatypevalues:
+    GeographicalAreaTypeValues:
       enum:
         - Continent
         - Country
@@ -884,7 +884,7 @@ components:
         - Region
       type: string
       description: ">\r\n* `Continent` - \r\n* `Country` - \r\n* `State` - \r\n* `District` - \r\n* `Province` - \r\n* `Town` - \r\n* `City` - \r\n* `Region` - \r\n"
-    addresstypevalues:
+    AddressTypeValues:
       enum:
         - PostalAddress
         - GeolocationAddress
@@ -893,47 +893,47 @@ components:
         - ElectronicAddress
       type: string
       description: ">\r\n* `PostalAddress` - \r\n* `GeolocationAddress` - \r\n* `LatitudeAddress` - \r\n* `LongitudeAddress` - \r\n* `ElectronicAddress` - \r\n"
-    address:
+    Address:
       type: object
       properties:
         AddressType:
-          $ref: '#/components/schemas/addresstypevalues'
+          $ref: '#/components/schemas/AddressTypeValues'
         LocationReference:
-          $ref: '#/components/schemas/location'
+          $ref: '#/components/schemas/Location'
       description: ''
-    location:
+    Location:
       type: object
       properties:
         LocationDescription:
-          $ref: '#/components/schemas/text'
+          $ref: '#/components/schemas/Text'
         LocationDateTime:
-          $ref: '#/components/schemas/datetime'
+          $ref: '#/components/schemas/DateTime'
         LocationStatus:
-          $ref: '#/components/schemas/status'
+          $ref: '#/components/schemas/Status'
         LocationType:
-          $ref: '#/components/schemas/geographicalareatypevalues'
+          $ref: '#/components/schemas/GeographicalAreaTypeValues'
         LocationZoningType:
-          $ref: '#/components/schemas/text'
+          $ref: '#/components/schemas/Text'
         LocationNeighborhoodType:
-          $ref: '#/components/schemas/text'
+          $ref: '#/components/schemas/Text'
         LocationConstructionType:
-          $ref: '#/components/schemas/text'
+          $ref: '#/components/schemas/Text'
         LocationOccupancyType:
-          $ref: '#/components/schemas/text'
+          $ref: '#/components/schemas/Text'
         LocationValue:
-          $ref: '#/components/schemas/value'
+          $ref: '#/components/schemas/Value'
         LocationCapacity:
-          $ref: '#/components/schemas/text'
+          $ref: '#/components/schemas/Text'
         LocationIdentification:
-          $ref: '#/components/schemas/identifier'
+          $ref: '#/components/schemas/Identifier'
         LocationAddress:
-          $ref: '#/components/schemas/address'
+          $ref: '#/components/schemas/Address'
         LocationName:
-          $ref: '#/components/schemas/name'
+          $ref: '#/components/schemas/Name'
         LocationTimeZone:
-          $ref: '#/components/schemas/text'
+          $ref: '#/components/schemas/Text'
       description: ''
-    casestatustypevalues:
+    CaseStatusTypeValues:
       enum:
         - Closed
         - Assigned
@@ -942,7 +942,7 @@ components:
         - Overdue
       type: string
       description: ">\r\n* `Closed` - Case has been closed. (ISO20022)\r\n* `Assigned` - Case has been assigned to another party. (ISO20022)\r\n* `UnderInvestigation` - Case is currently under investigation. (ISO20022)\r\n* `Unknown` - Case has never been assigned before. (ISO20022)\r\n* `Overdue` - Investigation is taking too long. (ISO20022)\r\n"
-    financialdocumenttypevalues:
+    FinancialDocumentTypeValues:
       enum:
         - Meteredserviceinvoice
         - Creditnoterelatedtofinancialadjustment
@@ -970,7 +970,7 @@ components:
         - Salereceipt
       type: string
       description: ">\r\n* `Meteredserviceinvoice` - Document is an invoice claiming payment for the supply of metered services, for example gas or electricity supplied to a fixed meter.\r\n* `Creditnoterelatedtofinancialadjustment` - Document is a credit note for the final amount settled for a commercial transaction.\r\n* `Debitnoterelatedtofinancialadjustment` - Document is a debit note for the final amount settled for a commercial transaction.\r\n* `Commercialinvoice` - Document is an invoice.\r\n* `Creditnote` - Document is a credit note.\r\n* `Debitnote` - Document is a debit note.\r\n* `Hireinvoice` - Document is an invoice for the hiring of human resources or renting goods or equipment.\r\n* `Selfbilledinvoice` - Document is an invoice issued by the debtor.\r\n* `Remittanceadvicemessage` - Document is a remittance advice sent separately from the current transaction.\r\n* `Relatedpaymentinstruction` - Document is a linked payment instruction to which the current payment instruction is related, for example, in a cover scenario.\r\n* `Commercialcontract` - Document is an agreement between the parties, stipulating the terms and conditions of the delivery of goods or services.\r\n* `Foreignexchangedealreference` - Document is a pre-agreed or pre-arranged foreign exchange transaction to which the payment transaction refers.\r\n* `Statementofaccount` - Document is a statement of the transactions posted to the debtor's account at the supplier.\r\n* `Dispatchadvice` - Document is a dispatch advice.\r\n* `Purchaseorder` - Document is a purchase order.\r\n* `Structuredcommunicationreference` - Document is a structured communication reference provided by the creditor to identify the referred transaction.\r\n* `Billoflading` - Document is a shipping notice.\r\n* `Voucher` - Document is an electronic payment document.\r\n* `Accountreceivableopenitem` - Document is a payment that applies to a specific source document.\r\n* `Tradeservicesutilitytransaction` - Document is a transaction identifier as assigned by the Trade Services Utility.\r\n* `Cashierreceipt` - When the Sale system print the Cashier copy of the Payment receipt.\r\n* `Customerreceipt` - When the Sale System requires   the POI system to print the Customer receipt.\r\n* `Journal` - When the POI or the Sale System wants to store a message on the journal printer or electronic journal of the Sale Terminal (it is sometimes a Sale Logging/Journal Printer).\r\n* `Salereceipt` - When the Sale System requires the POI system to print the Sale receipt.\r\n"
-    documentdatetimetypevalues:
+    DocumentDateTimeTypeValues:
       enum:
         - CreationDate
         - CapturingDate
@@ -979,75 +979,75 @@ components:
         - IssueDate
       type: string
       description: ">\r\n* `CreationDate` - \r\n* `CapturingDate` - \r\n* `VersionDate` - \r\n* `ValueDate` - \r\n* `IssueDate` - \r\n"
-    document:
+    Document:
       type: object
       properties:
         DocumentIdentification:
-          $ref: '#/components/schemas/identifier'
+          $ref: '#/components/schemas/Identifier'
         DocumentVersion:
           type: string
           description: ''
           format: number
         DocumentType:
-          $ref: '#/components/schemas/financialdocumenttypevalues'
+          $ref: '#/components/schemas/FinancialDocumentTypeValues'
         DocumentStatus:
-          $ref: '#/components/schemas/status'
+          $ref: '#/components/schemas/Status'
         DocumentDateTime:
-          $ref: '#/components/schemas/datetime'
+          $ref: '#/components/schemas/DateTime'
         DocumentName:
-          $ref: '#/components/schemas/name'
+          $ref: '#/components/schemas/Name'
         DocumentDateTimeType:
-          $ref: '#/components/schemas/documentdatetimetypevalues'
+          $ref: '#/components/schemas/DocumentDateTimeTypeValues'
         DocumentPurpose:
-          $ref: '#/components/schemas/text'
+          $ref: '#/components/schemas/Text'
         DocumentFormat:
-          $ref: '#/components/schemas/text'
+          $ref: '#/components/schemas/Text'
         DocumentSubject:
-          $ref: '#/components/schemas/text'
+          $ref: '#/components/schemas/Text'
         DocumentDescription:
-          $ref: '#/components/schemas/text'
+          $ref: '#/components/schemas/Text'
         DocumentValidityPeriod:
-          $ref: '#/components/schemas/datetimeperiod'
+          $ref: '#/components/schemas/DateTimePeriod'
       description: ''
-    case:
+    Case:
       type: object
       properties:
         CaseCreationDateTime:
-          $ref: '#/components/schemas/datetime'
+          $ref: '#/components/schemas/DateTime'
         CaseType:
-          $ref: '#/components/schemas/casetypevalues'
+          $ref: '#/components/schemas/CaseTypeValues'
         CaseLocation:
-          $ref: '#/components/schemas/location'
+          $ref: '#/components/schemas/Location'
         CaseStatus:
-          $ref: '#/components/schemas/casestatustypevalues'
+          $ref: '#/components/schemas/CaseStatusTypeValues'
         CaseDocument:
-          $ref: '#/components/schemas/document'
+          $ref: '#/components/schemas/Document'
         CaseDateTime:
-          $ref: '#/components/schemas/datetime'
+          $ref: '#/components/schemas/DateTime'
       description: Diagnosis guide for addressing reported issues with a product or service feature
-    caseresolution:
+    CaseResolution:
       type: object
       properties:
         ResolutionSchedule:
-          $ref: '#/components/schemas/schedule'
+          $ref: '#/components/schemas/Schedule'
         ResolutionType:
-          $ref: '#/components/schemas/text'
+          $ref: '#/components/schemas/Text'
         Description:
-          $ref: '#/components/schemas/text'
+          $ref: '#/components/schemas/Text'
       description: Resolution guide for resolving reported issue with a product or service feature
     Servicing:
       type: object
       properties:
         ProductandServiceFeature:
-          $ref: '#/components/schemas/productfeature'
+          $ref: '#/components/schemas/ProductFeature'
         ProductandServiceFeatureGuideline:
-          $ref: '#/components/schemas/ruleset'
+          $ref: '#/components/schemas/RuleSet'
         ProductandServiceFeatureProblemDiagnosis:
-          $ref: '#/components/schemas/case'
+          $ref: '#/components/schemas/Case'
         ProductandServiceFeatureProblemResolution:
-          $ref: '#/components/schemas/caseresolution'
+          $ref: '#/components/schemas/CaseResolution'
       description: "\"An assertion or statement with regard to a concept, a characteristic.\n\nExamples: Product pricing rules, Customer reference details\n\nA descriptor can be atomic or composed.\"\nProspect Management"
-    serviceaccessarrangement:
+    ServiceAccessArrangement:
       type: object
       properties:
         ServiceAccessArrangement:
@@ -1059,11 +1059,11 @@ components:
       type: object
       properties:
         ProductandServiceLocationAvailability:
-          $ref: '#/components/schemas/location'
+          $ref: '#/components/schemas/Location'
         ProductandServiceTimeAvailability:
-          $ref: '#/components/schemas/datetime'
+          $ref: '#/components/schemas/DateTime'
         ProductandServiceAccessAvailability:
-          $ref: '#/components/schemas/serviceaccessarrangement'
+          $ref: '#/components/schemas/ServiceAccessArrangement'
       description: "\"An assertion or statement with regard to a concept, a characteristic.\n\nExamples: Product pricing rules, Customer reference details\n\nA descriptor can be atomic or composed.\"\nProspect Management"
     productdirectoryentry:
       type: object
@@ -1073,7 +1073,7 @@ components:
           description: "The current version of the product referenced in the directory.\n"
           format: string
       description: "Any configuration settings for the directory entry (e.g. generally available, provisional) ||\r\n|"
-    productidentificationtypevalues:
+    ProductIdentificationTypeValues:
       enum:
         - ISINCode
         - PackageCode
@@ -1090,15 +1090,15 @@ components:
         - Universalproductcode
       type: string
       description: ">\r\n* `ISINCode` - \r\n* `PackageCode` - \r\n* `Buyersitemnumber` - Product identifier assigned by the buyer.\r\n* `Commercialdescriptioncodename` - A code to identify a product based on applicable commercial conditions.\r\n* `EAN` - The unique EAN (European Article Number) code.\r\n* `Harmonizedtariffcodename` - Classification of goods as developed by the Customs Cooperation council.\r\n* `Manufacturersitemnumber` - Product identifier as assigned by the manufacturer.\r\n* `Modelnumber` - Reference number assigned by the manufacturer to differentiate variations in similar products in a class or group.\r\n* `Partnumber` - Reference assigned by the manufacturer to a product part.\r\n* `Quotacategory` - Product identifier used by the retail industry.\r\n* `Stylenumber` - Identification of the style of a product.\r\n* `Suppliersitemnumber` - Number assigned to an article by the supplier of that article.\r\n* `Universalproductcode` - Number assigned to a manufacturer's product by the Product Code Council.\r\n"
-    productidentification:
+    ProductIdentification:
       type: object
       properties:
         ProductIdentification:
-          $ref: '#/components/schemas/identifier'
+          $ref: '#/components/schemas/Identifier'
         ProductIdentificationType:
-          $ref: '#/components/schemas/productidentificationtypevalues'
+          $ref: '#/components/schemas/ProductIdentificationTypeValues'
       description: The identifier of product e.g. ISIN Code.
-    bankingproducttypevalues:
+    BankingProductTypeValues:
       enum:
         - LoanProduct
         - CurrentAccountProduct
@@ -1107,7 +1107,7 @@ components:
         - TermDepositProduct
       type: string
       description: ">\r\n* `LoanProduct` - \r\n* `CurrentAccountProduct` - \r\n* `SavingAccountProduct` - \r\n* `BrokeredProduct` - \r\n* `TermDepositProduct` - \r\n"
-    productstatustypevalues:
+    ProductStatusTypeValues:
       enum:
         - Initiated
         - Announced
@@ -1116,41 +1116,41 @@ components:
         - Active
       type: string
       description: ">\r\n* `Initiated` - \r\n* `Announced` - \r\n* `Sold` - \r\n* `Obsolete` - \r\n* `Active` - \r\n"
-    productstatus:
+    ProductStatus:
       type: object
       properties:
         ProductStatus:
-          $ref: '#/components/schemas/status'
+          $ref: '#/components/schemas/Status'
         ProductStatusType:
-          $ref: '#/components/schemas/productstatustypevalues'
+          $ref: '#/components/schemas/ProductStatusTypeValues'
       description: 'Refers to the lifecycle of a product (e.g., initiated, announced, active, obsolete, withdrawn).'
-    bankingproduct:
+    BankingProduct:
       type: object
       properties:
         ProductIdentification:
-          $ref: '#/components/schemas/productidentification'
+          $ref: '#/components/schemas/ProductIdentification'
         ProductType:
-          $ref: '#/components/schemas/bankingproducttypevalues'
+          $ref: '#/components/schemas/BankingProductTypeValues'
         ProductLifecycleStatus:
-          $ref: '#/components/schemas/productstatus'
+          $ref: '#/components/schemas/ProductStatus'
         ProductPriority:
-          $ref: '#/components/schemas/text'
+          $ref: '#/components/schemas/Text'
         ProductDescription:
-          $ref: '#/components/schemas/text'
+          $ref: '#/components/schemas/Text'
         ProductVersion:
-          $ref: '#/components/schemas/text'
+          $ref: '#/components/schemas/Text'
         ProductName:
-          $ref: '#/components/schemas/name'
+          $ref: '#/components/schemas/Name'
       description: " Product_x000D_\n|Product (https://www.iso20022.org/standardsrepository/type/Product)|Standard|ISO20022 BM ()"
     ProductDirectoryEntry:
       type: object
       properties:
         ProductVersion:
-          $ref: '#/components/schemas/text'
+          $ref: '#/components/schemas/Text'
         ProductDirectoryEntryConfiguration:
-          $ref: '#/components/schemas/productdirectoryentry'
+          $ref: '#/components/schemas/ProductDirectoryEntry'
         ProductRefrence:
-          $ref: '#/components/schemas/bankingproduct'
+          $ref: '#/components/schemas/BankingProduct'
       description: Capture and maintain reference information about some type of entitity within Product Directory.
   responses:
     BadRequest:
@@ -1221,35 +1221,35 @@ components:
             $ref: '#/components/schemas/Production'
   parameters:
     productdirectoryid:
-      name: productdirectoryid
+      name: product-directory-id
       in: path
       required: true
       style: simple
       schema:
         type: string
     operationsid:
-      name: operationsid
+      name: operations-id
       in: path
       required: true
       style: simple
       schema:
         type: string
     salesandmarketingid:
-      name: salesandmarketingid
+      name: sales-and-marketing-id
       in: path
       required: true
       style: simple
       schema:
         type: string
     servicingid:
-      name: servicingid
+      name: servicing-id
       in: path
       required: true
       style: simple
       schema:
         type: string
     productionid:
-      name: productionid
+      name: production-id
       in: path
       required: true
       style: simple
